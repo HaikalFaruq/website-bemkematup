@@ -1,16 +1,19 @@
 
 import { Quote } from 'lucide-react';
+import { useTranslation } from './TranslationProvider';
 
 export default function PresidentRemarks() {
+  const { t } = useTranslation();
+  
   return (
     <section id="president-remarks" className="py-20 bg-white dark:bg-gray-800">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            Student <span className="text-kema-red">President Remarks</span>
+            {t('Student')} <span className="text-kema-red">{t('President Remarks')}</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            A message from our student body president about our vision and commitment to the campus community.
+            {t('A message from our student body president about our vision and commitment to the campus community.')}
           </p>
         </div>
 
@@ -21,7 +24,7 @@ export default function PresidentRemarks() {
                 <Quote size={24} />
               </div>
               <blockquote className="text-lg leading-relaxed text-gray-700 dark:text-gray-200 italic">
-                "As the President of BEM KEMA Telkom University Purwokerto, I am dedicated to building a campus environment where every student can thrive academically, professionally, and personally. Our focus is on creating innovative programs that address student needs while fostering leadership skills that will serve our members throughout their careers."
+                "{t('As the President of BEM KEMA Telkom University Purwokerto, I am dedicated to building a campus environment where every student can thrive academically, professionally, and personally. Our focus is on creating innovative programs that address student needs while fostering leadership skills that will serve our members throughout their careers.')}"
               </blockquote>
               <div className="mt-6 flex items-center">
                 <span className="text-kema-red font-semibold">Muhammad Haikal Faruq</span>
@@ -33,20 +36,20 @@ export default function PresidentRemarks() {
             <div className="flex flex-col space-y-2">
               <div className="flex items-center">
                 <div className="w-12 h-1 bg-kema-red rounded-full mr-4"></div>
-                <span className="text-gray-700 dark:text-gray-300 font-medium">Vision</span>
+                <span className="text-gray-700 dark:text-gray-300 font-medium">{t('Vision')}</span>
               </div>
               <p className="text-gray-600 dark:text-gray-400 pl-16">
-                To be the leading student organization that empowers every student to reach their full potential.
+                {t('To be the leading student organization that empowers every student to reach their full potential.')}
               </p>
             </div>
 
             <div className="flex flex-col space-y-2">
               <div className="flex items-center">
                 <div className="w-12 h-1 bg-kema-red rounded-full mr-4"></div>
-                <span className="text-gray-700 dark:text-gray-300 font-medium">Mission</span>
+                <span className="text-gray-700 dark:text-gray-300 font-medium">{t('Mission')}</span>
               </div>
               <p className="text-gray-600 dark:text-gray-400 pl-16">
-                To create programs and initiatives that foster academic excellence, leadership development, and community engagement.
+                {t('To create programs and initiatives that foster academic excellence, leadership development, and community engagement.')}
               </p>
             </div>
           </div>
@@ -61,9 +64,9 @@ export default function PresidentRemarks() {
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-white text-center p-8">
-                    <h3 className="text-3xl font-bold mb-4">Leadership</h3>
+                    <h3 className="text-3xl font-bold mb-4">{t('Leadership')}</h3>
                     <p className="text-lg max-w-md">
-                      Guiding our student body with integrity, innovation, and a commitment to excellence.
+                      {t('Guiding our student body with integrity, innovation, and a commitment to excellence.')}
                     </p>
                   </div>
                 </div>
@@ -73,7 +76,7 @@ export default function PresidentRemarks() {
                   <div className="w-8 h-1 bg-kema-red rounded-full"></div>
                   <div>
                     <p className="text-lg font-bold text-gray-800 dark:text-white">2025</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Presidential Term</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{t('Presidential Term')}</p>
                   </div>
                 </div>
               </div>

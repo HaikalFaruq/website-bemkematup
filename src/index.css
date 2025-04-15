@@ -1,5 +1,7 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @font-face {
   font-family: 'FH Anorma';
@@ -10,71 +12,56 @@
   font-display: swap;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 0 88% 48%;
+    --primary: 221.2 83.2% 53.3%;
     --primary-foreground: 210 40% 98%;
-
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 0 88% 48%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.75rem;
 
-    --radius: 0.5rem;
+    /* KEMA Color Theme */
+    --kema-red: 0 72% 51%;  /* #E53E3E */
+    --kema-light-red: 352 75% 59%;  /* #F56565 */
+    --kema-dark-red: 0 65% 45%;  /* #C53030 */
+    --kema-dark: 240 12% 20%; /* #2D3039 - dark mode background */
   }
 
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-
-    --primary: 0 88% 48%;
-    --primary-foreground: 210 40% 98%;
-
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 0 88% 48%;
+    --ring: 224.3 76.3% 48%;
   }
 }
 
@@ -82,39 +69,66 @@
   * {
     @apply border-border;
   }
-
   body {
-    @apply bg-background text-foreground font-anorma;
-    scroll-behavior: smooth;
+    @apply bg-background text-foreground;
   }
 
-  ::selection {
-    @apply bg-kema-red/30;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'FH Anorma', sans-serif;
   }
 }
 
 @layer components {
-  .btn-primary {
-    @apply bg-kema-red text-white font-medium py-2 px-6 rounded-md hover:bg-kema-dark-red transition-colors duration-300;
-  }
-
-  .btn-secondary {
-    @apply bg-transparent border border-kema-red text-kema-red font-medium py-2 px-6 rounded-md hover:bg-kema-red/10 transition-colors duration-300;
-  }
-
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply inline-flex items-center px-6 py-3 bg-kema-red hover:bg-kema-dark-red text-white font-medium rounded-full transition-colors shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center px-6 py-3 bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-800 dark:text-white border border-gray-300 dark:border-gray-700 font-medium rounded-full transition-colors shadow-md;
   }
 
+  .font-display {
+    font-family: 'FH Anorma', sans-serif;
+  }
+  
   .animate-on-scroll {
-    @apply opacity-0 translate-y-8 transition-all duration-500 ease-out;
+    @apply opacity-0 translate-y-8 transition-all duration-1000 ease-out;
   }
-
+  
   .animate-on-scroll.is-visible {
     @apply opacity-100 translate-y-0;
   }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
 
-  .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.2;
   }
 }

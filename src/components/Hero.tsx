@@ -1,8 +1,11 @@
 
 import { ArrowDown, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from './TranslationProvider';
 
 export default function Hero() {
+  const { t } = useTranslation();
+  
   const scrollToMinistry = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const ministrySection = document.getElementById('ministry');
@@ -27,20 +30,20 @@ export default function Hero() {
         <div className="text-center lg:text-left">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6">
             <span className="bg-gradient-to-r from-kema-red to-kema-light-red bg-clip-text text-transparent">
-              Inspiring
+              {t('Inspiring')}
             </span>{" "}
-            Leadership for Student Excellence
+            {t('Leadership for Student Excellence')}
           </h1>
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0">
-            BEM KEMA Telkom University Purwokerto is dedicated to fostering student growth, providing opportunities, and creating a vibrant campus community.
+            {t('BEM KEMA Telkom University Purwokerto is dedicated to fostering student growth, providing opportunities, and creating a vibrant campus community.')}
           </p>
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
             <a href="#ministry" className="btn-primary flex items-center gap-2" onClick={scrollToMinistry}>
-              <span>Explore Ministry</span>
+              <span>{t('Explore Ministry')}</span>
               <ArrowRight size={16} />
             </a>
             <a href="#contact" className="btn-secondary flex items-center gap-2">
-              <span>Connect With Us</span>
+              <span>{t('Connect With Us')}</span>
               <ArrowRight size={16} />
             </a>
           </div>
@@ -91,7 +94,7 @@ export default function Hero() {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-kema-red dark:hover:text-kema-light-red transition-colors group"
         aria-label="Scroll down to Ministry section"
       >
-        <span className="text-sm mb-2 group-hover:translate-y-1 transition-transform">Scroll down</span>
+        <span className="text-sm mb-2 group-hover:translate-y-1 transition-transform">{t('Scroll down')}</span>
         <ArrowDown className="animate-bounce group-hover:animate-pulse" size={20} />
       </a>
     </section>
