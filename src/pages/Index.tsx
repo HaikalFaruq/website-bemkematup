@@ -1,5 +1,6 @@
 
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { TranslationProvider } from '@/components/TranslationProvider';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import PresidentRemarks from '@/components/PresidentRemarks';
@@ -40,17 +41,19 @@ const Index = () => {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen">
-        <Navbar />
-        <Hero />
-        <PresidentRemarks />
-        <Ministry />
-        <Blog />
-        <FAQ />
-        <Contact />
-        <Footer />
-        <ScrollToTop />
-      </div>
+      <TranslationProvider>
+        <div className="min-h-screen">
+          <Navbar />
+          <Hero />
+          <PresidentRemarks />
+          <Ministry />
+          <Blog />
+          <FAQ />
+          <Contact />
+          <Footer />
+          <ScrollToTop />
+        </div>
+      </TranslationProvider>
     </ThemeProvider>
   );
 };

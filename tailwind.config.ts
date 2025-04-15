@@ -116,7 +116,8 @@ export default {
 			},
 			fontFamily: {
 				'sans': ['Inter', 'sans-serif'],
-				'display': ['Playfair Display', 'serif']
+				'display': ['Playfair Display', 'serif'],
+				'anorma': ['FH Anorma', 'sans-serif']
 			}
 		}
 	},

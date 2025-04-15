@@ -1,8 +1,15 @@
 
 import { useState, useEffect } from 'react';
 import { useTheme } from './ThemeProvider';
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { useTranslation } from './TranslationProvider';
+import { Moon, Sun, Menu, X, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 type NavLink = {
   name: string;
@@ -19,6 +26,7 @@ const navLinks: NavLink[] = [
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
+  const { language, setLanguage, t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -40,7 +48,7 @@ export default function Navbar() {
         <Link to="/" className="flex items-center">
           <img 
             src="/lovable-uploads/342ad5c5-616e-45fc-abf8-8d7bb75baf6f.png" 
-            alt="BEM KEMA TUP Logo" 
+            alt="Logo" 
             className="h-12 w-12"
           />
         </Link>
@@ -53,9 +61,31 @@ export default function Navbar() {
               href={link.href}
               className="text-gray-700 dark:text-gray-200 hover:text-kema-red dark:hover:text-kema-light-red font-medium transition-colors"
             >
-              {link.name}
+              {t(link.name)}
             </a>
           ))}
+          
+          {/* Language Switcher */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button 
+                className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                aria-label="Change language"
+              >
+                <Globe size={18} />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => setLanguage('en')} className={language === 'en' ? 'bg-gray-100 dark:bg-gray-800' : ''}>
+                English
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setLanguage('id')} className={language === 'id' ? 'bg-gray-100 dark:bg-gray-800' : ''}>
+                Bahasa Indonesia
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          
+          {/* Theme Toggle */}
           <button 
             onClick={toggleTheme}
             className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
@@ -67,6 +97,26 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center">
+          {/* Language Switcher Mobile */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button 
+                className="p-2 mr-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200"
+                aria-label="Change language"
+              >
+                <Globe size={18} />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => setLanguage('en')}>
+                English
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setLanguage('id')}>
+                Bahasa Indonesia
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          
           <button 
             onClick={toggleTheme}
             className="p-2 mr-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200"
@@ -95,7 +145,7 @@ export default function Navbar() {
                 className="block py-2 text-base font-medium text-gray-700 dark:text-gray-200 hover:text-kema-red dark:hover:text-kema-light-red"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {link.name}
+                {t(link.name)}
               </a>
             ))}
           </div>

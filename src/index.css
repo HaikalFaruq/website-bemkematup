@@ -1,6 +1,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
+@font-face {
+  font-family: 'FH Anorma';
+  src: url('/fonts/FH-Anorma.woff2') format('woff2'),
+       url('/fonts/FH-Anorma.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -75,7 +84,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-anorma;
     scroll-behavior: smooth;
   }
 
