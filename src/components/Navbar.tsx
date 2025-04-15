@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useTheme } from './ThemeProvider';
 import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 type NavLink = {
   name: string;
@@ -36,11 +37,16 @@ export default function Navbar() {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
         {/* Logo */}
-        <a href="#home" className="flex items-center">
+        <Link to="/" className="flex items-center">
+          <img 
+            src="/lovable-uploads/342ad5c5-616e-45fc-abf8-8d7bb75baf6f.png" 
+            alt="BEM KEMA TUP Logo" 
+            className="h-12 w-12 mr-2"
+          />
           <span className="text-xl font-display font-bold bg-gradient-to-r from-kema-red to-kema-light-red bg-clip-text text-transparent">
             BEM KEMA TUP
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">

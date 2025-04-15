@@ -1,5 +1,6 @@
 
 import { Calendar, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 type BlogPost = {
   id: number;
@@ -93,9 +94,9 @@ export default function Blog() {
         </div>
 
         <div className="text-center mt-12">
-          <a href="#" className="btn-secondary">
+          <Link to="/articles" className="btn-secondary">
             View All Articles
-          </a>
+          </Link>
         </div>
       </div>
     </section>

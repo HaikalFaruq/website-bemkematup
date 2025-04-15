@@ -1,7 +1,19 @@
 
 import { ArrowDown, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
+  const scrollToMinistry = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const ministrySection = document.getElementById('ministry');
+    
+    if (ministrySection) {
+      ministrySection.scrollIntoView({ 
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-white to-gray-50 dark:from-kema-dark dark:to-gray-900">
       {/* Background decorations */}
@@ -13,6 +25,13 @@ export default function Hero() {
 
       <div className="section-container relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="text-center lg:text-left">
+          <div className="flex justify-center lg:justify-start mb-6">
+            <img 
+              src="/lovable-uploads/342ad5c5-616e-45fc-abf8-8d7bb75baf6f.png" 
+              alt="BEM KEMA TUP Logo" 
+              className="h-24 w-24"
+            />
+          </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6">
             <span className="bg-gradient-to-r from-kema-red to-kema-light-red bg-clip-text text-transparent">
               Inspiring
@@ -23,7 +42,7 @@ export default function Hero() {
             BEM KEMA Telkom University Purwokerto is dedicated to fostering student growth, providing opportunities, and creating a vibrant campus community.
           </p>
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-            <a href="#ministry" className="btn-primary flex items-center gap-2">
+            <a href="#ministry" className="btn-primary flex items-center gap-2" onClick={scrollToMinistry}>
               <span>Explore Ministry</span>
               <ArrowRight size={16} />
             </a>
@@ -67,10 +86,12 @@ export default function Hero() {
 
       <a 
         href="#ministry"
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-kema-red dark:hover:text-kema-light-red transition-colors"
+        onClick={scrollToMinistry}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-kema-red dark:hover:text-kema-light-red transition-colors group"
+        aria-label="Scroll down to Ministry section"
       >
-        <span className="text-sm mb-2">Scroll down</span>
-        <ArrowDown className="animate-bounce" size={20} />
+        <span className="text-sm mb-2 group-hover:translate-y-1 transition-transform">Scroll down</span>
+        <ArrowDown className="animate-bounce group-hover:animate-pulse" size={20} />
       </a>
     </section>
   );

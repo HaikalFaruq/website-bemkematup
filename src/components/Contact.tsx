@@ -25,12 +25,20 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
+    // Construct mailto URL with form data
+    const mailtoUrl = `mailto:haikalfaruq2004@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    )}`;
+    
+    // Open email client
+    window.location.href = mailtoUrl;
+    
+    // Show success message and reset form
     setTimeout(() => {
       setIsSubmitting(false);
       toast({
-        title: "Message Sent!",
-        description: "Thank you for reaching out. We'll get back to you soon.",
+        title: "Message Prepared!",
+        description: "Your email client has been opened with the message details.",
         variant: "default",
       });
       
@@ -41,7 +49,7 @@ export default function Contact() {
         subject: '',
         message: ''
       });
-    }, 1500);
+    }, 1000);
   };
 
   return (
@@ -189,7 +197,7 @@ export default function Contact() {
                       Email Us
                     </h4>
                     <p className="text-gray-600 dark:text-gray-300">
-                      info@bemkematup.org<br />
+                      haikalfaruq2004@gmail.com<br />
                       president@bemkematup.org
                     </p>
                   </div>
