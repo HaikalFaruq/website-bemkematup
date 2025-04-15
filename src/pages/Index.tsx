@@ -2,6 +2,7 @@
 import { ThemeProvider } from '@/components/ThemeProvider';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import PresidentRemarks from '@/components/PresidentRemarks';
 import Ministry from '@/components/Ministry';
 import Blog from '@/components/Blog';
 import FAQ from '@/components/FAQ';
@@ -42,6 +43,7 @@ const Index = () => {
       <div className="min-h-screen">
         <Navbar />
         <Hero />
+        <PresidentRemarks />
         <Ministry />
         <Blog />
         <FAQ />

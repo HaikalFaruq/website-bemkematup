@@ -8,6 +8,11 @@ type Ministry = {
   description: string;
   icon: string;
   responsibilities: string[];
+  minister: {
+    name: string;
+    position: string;
+    photo: string;
+  };
 };
 
 const ministries: Ministry[] = [
@@ -22,7 +27,12 @@ const ministries: Ministry[] = [
       "Member coordination",
       "Policy implementation",
       "Resource allocation"
-    ]
+    ],
+    minister: {
+      name: "Muhammad Haikal Faruq",
+      position: "Minister of Internal Affairs",
+      photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+    }
   },
   {
     id: 2,
@@ -35,7 +45,12 @@ const ministries: Ministry[] = [
       "Community engagement",
       "Collaborative projects",
       "Brand representation"
-    ]
+    ],
+    minister: {
+      name: "Siti Fatimah",
+      position: "Minister of External Affairs",
+      photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+    }
   },
   {
     id: 3,
@@ -48,7 +63,12 @@ const ministries: Ministry[] = [
       "Event coverage",
       "Graphic design",
       "Public announcements"
-    ]
+    ],
+    minister: {
+      name: "Budi Santoso",
+      position: "Minister of Media & Communication",
+      photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+    }
   },
   {
     id: 4,
@@ -61,7 +81,12 @@ const ministries: Ministry[] = [
       "Rights protection",
       "Wellness programs",
       "Support services"
-    ]
+    ],
+    minister: {
+      name: "Dewi Putri",
+      position: "Minister of Student Welfare",
+      photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+    }
   },
   {
     id: 5,
@@ -74,7 +99,12 @@ const ministries: Ministry[] = [
       "Traditional performances",
       "Creative workshops",
       "Talent development"
-    ]
+    ],
+    minister: {
+      name: "Agus Wijaya",
+      position: "Minister of Arts & Culture",
+      photo: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+    }
   },
   {
     id: 6,
@@ -87,7 +117,12 @@ const ministries: Ministry[] = [
       "Learning resources",
       "Educational workshops",
       "Research promotion"
-    ]
+    ],
+    minister: {
+      name: "Rina Wijaya",
+      position: "Minister of Academic Affairs",
+      photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+    }
   }
 ];
 
@@ -155,6 +190,28 @@ export default function Ministry() {
                   the overall functioning of BEM KEMA Telkom University Purwokerto, ensuring that we 
                   maintain our standards of excellence and service to the student body.
                 </p>
+                
+                {/* Minister Information */}
+                <div className="mb-8 flex flex-col items-center sm:items-start sm:flex-row sm:space-x-6 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                  <div className="w-24 h-24 rounded-full overflow-hidden mb-4 sm:mb-0">
+                    <img 
+                      src={activeMinistry.minister.photo} 
+                      alt={activeMinistry.minister.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="text-center sm:text-left">
+                    <h4 className="text-xl font-bold text-gray-800 dark:text-white">
+                      {activeMinistry.minister.name}
+                    </h4>
+                    <p className="text-kema-red dark:text-kema-light-red font-medium mb-2">
+                      {activeMinistry.minister.position}
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-300">
+                      Leading our {activeMinistry.name} initiatives with dedication and expertise.
+                    </p>
+                  </div>
+                </div>
                 
                 <h4 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Key Responsibilities</h4>
                 

@@ -3,8 +3,10 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
 
 type BlogPost = {
   id: number;
@@ -74,6 +76,22 @@ const allBlogPosts: BlogPost[] = [
 ];
 
 const Articles = () => {
+  const { toast } = useToast();
+  const [expandedPost, setExpandedPost] = useState<number | null>(null);
+
+  const handleReadMore = (postId: number) => {
+    if (expandedPost === postId) {
+      setExpandedPost(null);
+    } else {
+      setExpandedPost(postId);
+      toast({
+        title: "Article Expanded",
+        description: "You can now read the full article content.",
+        variant: "default",
+      });
+    }
+  };
+
   return (
     <ThemeProvider>
       <div className="min-h-screen">
@@ -114,18 +132,28 @@ const Articles = () => {
                       <span className="bg-kema-red/10 text-kema-red px-2 py-1 rounded text-xs font-medium">
                         {post.category}
                       </span>
-                      <span className="ml-4">{post.date}</span>
+                      <div className="flex items-center ml-4">
+                        <Calendar size={14} className="mr-1" />
+                        <span>{post.date}</span>
+                      </div>
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-white">
                       {post.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4">
-                      {post.excerpt}
-                    </p>
+                    
+                    <div className={`transition-all duration-300 overflow-hidden ${expandedPost === post.id ? 'max-h-[1000px]' : 'max-h-20'}`}>
+                      <p className="text-gray-600 dark:text-gray-300 mb-4">
+                        {expandedPost === post.id ? post.content : post.excerpt}
+                      </p>
+                    </div>
+                    
                     <button 
-                      className="inline-flex items-center text-kema-red hover:text-kema-dark-red dark:text-kema-light-red dark:hover:text-white transition-colors font-medium"
+                      onClick={() => handleReadMore(post.id)}
+                      className="inline-flex items-center text-kema-red hover:text-kema-dark-red dark:text-kema-light-red dark:hover:text-white transition-colors font-medium mt-2"
+                      aria-expanded={expandedPost === post.id}
                     >
-                      <span>Read More</span>
+                      <span>{expandedPost === post.id ? "Show Less" : "Read More"}</span>
+                      <ArrowRight size={16} className={`ml-2 transition-transform ${expandedPost === post.id ? 'rotate-90' : ''}`} />
                     </button>
                   </div>
                 </div>

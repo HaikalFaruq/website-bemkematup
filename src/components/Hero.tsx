@@ -25,13 +25,6 @@ export default function Hero() {
 
       <div className="section-container relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="text-center lg:text-left">
-          <div className="flex justify-center lg:justify-start mb-6">
-            <img 
-              src="/lovable-uploads/342ad5c5-616e-45fc-abf8-8d7bb75baf6f.png" 
-              alt="BEM KEMA TUP Logo" 
-              className="h-24 w-24"
-            />
-          </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6">
             <span className="bg-gradient-to-r from-kema-red to-kema-light-red bg-clip-text text-transparent">
               Inspiring
@@ -56,6 +49,14 @@ export default function Hero() {
         <div className="relative">
           <div className="w-full h-full max-w-md mx-auto">
             <div className="relative w-full h-0 pb-[100%] overflow-hidden rounded-2xl shadow-2xl animate-float">
+              {/* Place the logo as a top layer on the image */}
+              <div className="absolute inset-0 w-full h-full flex items-center justify-center z-10">
+                <img 
+                  src="/lovable-uploads/342ad5c5-616e-45fc-abf8-8d7bb75baf6f.png" 
+                  alt="BEM KEMA TUP Logo" 
+                  className="h-32 w-32 drop-shadow-xl"
+                />
+              </div>
               <img 
                 src="https://images.unsplash.com/photo-1529448256798-a658ae431139?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                 alt="Students collaborating" 

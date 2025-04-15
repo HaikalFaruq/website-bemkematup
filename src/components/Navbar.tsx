@@ -36,16 +36,13 @@ export default function Navbar() {
       isScrolled || mobileMenuOpen ? 'bg-white/90 dark:bg-kema-dark/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
-        {/* Logo */}
+        {/* Logo only */}
         <Link to="/" className="flex items-center">
           <img 
             src="/lovable-uploads/342ad5c5-616e-45fc-abf8-8d7bb75baf6f.png" 
             alt="BEM KEMA TUP Logo" 
-            className="h-12 w-12 mr-2"
+            className="h-12 w-12"
           />
-          <span className="text-xl font-display font-bold bg-gradient-to-r from-kema-red to-kema-light-red bg-clip-text text-transparent">
-            BEM KEMA TUP
-          </span>
         </Link>
 
         {/* Desktop Navigation */}
