@@ -1,13 +1,55 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { ThemeProvider } from '@/components/ThemeProvider';
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import Ministry from '@/components/Ministry';
+import Blog from '@/components/Blog';
+import FAQ from '@/components/FAQ';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
+import ScrollToTop from '@/components/ScrollToTop';
+import { useEffect } from 'react';
 
 const Index = () => {
+  // Initialize animation observers
+  useEffect(() => {
+    const animateOnScrollObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    // Get all elements that should be animated
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+    animateElements.forEach((el) => {
+      animateOnScrollObserver.observe(el);
+    });
+
+    return () => {
+      animateElements.forEach((el) => {
+        animateOnScrollObserver.unobserve(el);
+      });
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <ThemeProvider>
+      <div className="min-h-screen">
+        <Navbar />
+        <Hero />
+        <Ministry />
+        <Blog />
+        <FAQ />
+        <Contact />
+        <Footer />
+        <ScrollToTop />
       </div>
-    </div>
+    </ThemeProvider>
   );
 };
 
