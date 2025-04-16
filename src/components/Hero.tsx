@@ -6,12 +6,12 @@ import { useTranslation } from './TranslationProvider';
 export default function Hero() {
   const { t } = useTranslation();
   
-  const scrollToMinistry = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const scrollToPresidentRemarks = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const ministrySection = document.getElementById('ministry');
+    const presidentRemarksSection = document.getElementById('president-remarks');
     
-    if (ministrySection) {
-      ministrySection.scrollIntoView({ 
+    if (presidentRemarksSection) {
+      presidentRemarksSection.scrollIntoView({ 
         behavior: 'smooth'
       });
     }
@@ -38,11 +38,16 @@ export default function Hero() {
             {t('BEM KEMA Telkom University Purwokerto is dedicated to fostering student growth, providing opportunities, and creating a vibrant campus community.')}
           </p>
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-            <a href="#ministry" className="btn-primary flex items-center gap-2" onClick={scrollToMinistry}>
+            <a href="#president-remarks" className="btn-primary flex items-center gap-2" onClick={scrollToPresidentRemarks}>
               <span>{t('Explore Ministry')}</span>
               <ArrowRight size={16} />
             </a>
-            <a href="#contact" className="btn-secondary flex items-center gap-2">
+            <a 
+              href="https://www.instagram.com/bemkematelupurwokerto/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn-secondary flex items-center gap-2"
+            >
               <span>{t('Connect With Us')}</span>
               <ArrowRight size={16} />
             </a>
@@ -89,10 +94,10 @@ export default function Hero() {
       </div>
 
       <a 
-        href="#ministry"
-        onClick={scrollToMinistry}
+        href="#president-remarks"
+        onClick={scrollToPresidentRemarks}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-kema-red dark:hover:text-kema-light-red transition-colors group"
-        aria-label="Scroll down to Ministry section"
+        aria-label="Scroll down to President Remarks section"
       >
         <span className="text-sm mb-2 group-hover:translate-y-1 transition-transform">{t('Scroll down')}</span>
         <ArrowDown className="animate-bounce group-hover:animate-pulse" size={20} />
