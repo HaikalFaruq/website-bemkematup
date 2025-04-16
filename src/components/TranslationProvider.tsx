@@ -40,6 +40,9 @@ const translations = {
     'Ministries': 'Ministries',
     'Explore the various ministries that make up BEM KEMA Telkom University Purwokerto.': 'Explore the various ministries that make up BEM KEMA Telkom University Purwokerto.',
     'Learn More': 'Learn More',
+    'Discover the different departments that make up BEM KEMA and how they work together to create an impactful student experience.': 'Discover the different departments that make up BEM KEMA and how they work together to create an impactful student experience.',
+    'Key Responsibilities': 'Key Responsibilities',
+    'Leading our initiatives with dedication and expertise.': 'Leading our initiatives with dedication and expertise.',
     
     // Blog Section
     'Latest News &': 'Latest News &',
@@ -47,7 +50,9 @@ const translations = {
     'Stay informed with the latest news, events, and activities from BEM KEMA Telkom University Purwokerto.': 'Stay informed with the latest news, events, and activities from BEM KEMA Telkom University Purwokerto.',
     'View All Articles': 'View All Articles',
     'Read More': 'Read More',
+    'Show Less': 'Show Less',
     'min read': 'min read',
+    'Stay updated with the latest happenings, events, and initiatives from BEM KEMA Telkom University Purwokerto.': 'Stay updated with the latest happenings, events, and initiatives from BEM KEMA Telkom University Purwokerto.',
     
     // FAQ Section
     'Frequently': 'Frequently',
@@ -135,6 +140,9 @@ const translations = {
     'Ministries': 'Kami',
     'Explore the various ministries that make up BEM KEMA Telkom University Purwokerto.': 'Jelajahi berbagai kementerian yang membentuk BEM KEMA Telkom University Purwokerto.',
     'Learn More': 'Pelajari Lebih Lanjut',
+    'Discover the different departments that make up BEM KEMA and how they work together to create an impactful student experience.': 'Temukan berbagai departemen yang membentuk BEM KEMA dan bagaimana mereka bekerja sama untuk menciptakan pengalaman mahasiswa yang berdampak.',
+    'Key Responsibilities': 'Tanggung Jawab Utama',
+    'Leading our initiatives with dedication and expertise.': 'Memimpin inisiatif kami dengan dedikasi dan keahlian.',
     
     // Blog Section
     'Latest News &': 'Berita Terbaru &',
@@ -142,7 +150,9 @@ const translations = {
     'Stay informed with the latest news, events, and activities from BEM KEMA Telkom University Purwokerto.': 'Tetap terinformasi dengan berita, acara, dan kegiatan terbaru dari BEM KEMA Telkom University Purwokerto.',
     'View All Articles': 'Lihat Semua Artikel',
     'Read More': 'Baca Selengkapnya',
+    'Show Less': 'Tampilkan Lebih Sedikit',
     'min read': 'menit baca',
+    'Stay updated with the latest happenings, events, and initiatives from BEM KEMA Telkom University Purwokerto.': 'Tetap terhubung dengan kejadian, acara, dan inisiatif terbaru dari BEM KEMA Telkom University Purwokerto.',
     
     // FAQ Section
     'Frequently': 'Pertanyaan',

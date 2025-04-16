@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { Check } from 'lucide-react';
+import { useTranslation } from './TranslationProvider';
 
 type Ministry = {
   id: number;
@@ -128,17 +129,17 @@ const ministries: Ministry[] = [
 
 export default function Ministry() {
   const [activeMinistry, setActiveMinistry] = useState<Ministry>(ministries[0]);
+  const { t } = useTranslation();
 
   return (
     <section id="ministry" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            Our <span className="text-kema-red">Ministries</span>
+            {t('Our')} <span className="text-kema-red">{t('Ministries')}</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Discover the different departments that make up BEM KEMA and how they work together
-            to create an impactful student experience.
+            {t('Discover the different departments that make up BEM KEMA and how they work together to create an impactful student experience.')}
           </p>
         </div>
 
@@ -208,12 +209,12 @@ export default function Ministry() {
                       {activeMinistry.minister.position}
                     </p>
                     <p className="text-gray-600 dark:text-gray-300">
-                      Leading our {activeMinistry.name} initiatives with dedication and expertise.
+                      {t('Leading our initiatives with dedication and expertise.')}
                     </p>
                   </div>
                 </div>
                 
-                <h4 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Key Responsibilities</h4>
+                <h4 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">{t('Key Responsibilities')}</h4>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {activeMinistry.responsibilities.map((resp, idx) => (

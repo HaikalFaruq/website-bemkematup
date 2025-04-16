@@ -3,6 +3,7 @@ import { Calendar, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
+import { useTranslation } from './TranslationProvider';
 
 type BlogPost = {
   id: number;
@@ -47,6 +48,7 @@ const blogPosts: BlogPost[] = [
 export default function Blog() {
   const { toast } = useToast();
   const [expandedPost, setExpandedPost] = useState<number | null>(null);
+  const { t } = useTranslation();
 
   const handleReadMore = (postId: number) => {
     if (expandedPost === postId) {
@@ -66,11 +68,10 @@ export default function Blog() {
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            Latest <span className="text-kema-red">News & Updates</span>
+            {t('Latest News &')} <span className="text-kema-red">{t('Updates')}</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Stay updated with the latest happenings, events, and initiatives from
-            BEM KEMA Telkom University Purwokerto.
+            {t('Stay updated with the latest happenings, events, and initiatives from BEM KEMA Telkom University Purwokerto.')}
           </p>
         </div>
 
@@ -112,7 +113,7 @@ export default function Blog() {
                   className="inline-flex items-center text-kema-red hover:text-kema-dark-red dark:text-kema-light-red dark:hover:text-white transition-colors font-medium mt-2"
                   aria-expanded={expandedPost === post.id}
                 >
-                  <span>{expandedPost === post.id ? "Show Less" : "Read More"}</span>
+                  <span>{expandedPost === post.id ? t('Show Less') : t('Read More')}</span>
                   <ArrowRight size={16} className={`ml-2 transition-transform ${expandedPost === post.id ? 'rotate-90' : ''}`} />
                 </button>
               </div>
@@ -122,7 +123,7 @@ export default function Blog() {
 
         <div className="text-center mt-12">
           <Link to="/articles" className="btn-secondary">
-            View All Articles
+            {t('View All Articles')}
           </Link>
         </div>
       </div>

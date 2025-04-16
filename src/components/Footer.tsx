@@ -1,8 +1,10 @@
 
 import { ChevronRight } from 'lucide-react';
+import { useTranslation } from './TranslationProvider';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
   
   return (
     <footer className="bg-gray-900 text-gray-300 pt-16 pb-8">
@@ -14,8 +16,7 @@ export default function Footer() {
               BEM KEMA TUP
             </h3>
             <p className="mb-4">
-              The Student Executive Board of Telkom University Purwokerto, dedicated to 
-              enhancing student life and advocating for student interests.
+              {t('The Student Executive Board of Telkom University Purwokerto, dedicated to enhancing student life and advocating for student interests.')}
             </p>
             <div className="flex space-x-4 mt-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="Facebook">
@@ -44,17 +45,23 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-bold text-white mb-4">
-              Quick Links
+              {t('Quick Links')}
             </h3>
             <ul className="space-y-2">
-              {['Home', 'Ministry', 'Blog', 'FAQ', 'Contact'].map((item) => (
-                <li key={item}>
+              {[
+                {key: 'Home', link: '#home'}, 
+                {key: 'Ministry', link: '#ministry'}, 
+                {key: 'Blog', link: '#blog'}, 
+                {key: 'FAQ', link: '#faq'}, 
+                {key: 'Contact', link: '#contact'}
+              ].map((item) => (
+                <li key={item.key}>
                   <a 
-                    href={`#${item.toLowerCase()}`}
+                    href={item.link}
                     className="inline-flex items-center text-gray-400 hover:text-white transition-colors"
                   >
                     <ChevronRight size={14} className="mr-2" />
-                    <span>{item}</span>
+                    <span>{t(item.key)}</span>
                   </a>
                 </li>
               ))}
@@ -64,17 +71,23 @@ export default function Footer() {
           {/* Our Services */}
           <div>
             <h3 className="text-lg font-bold text-white mb-4">
-              Our Services
+              {t('Our Services')}
             </h3>
             <ul className="space-y-2">
-              {['Student Advocacy', 'Event Organization', 'Club Support', 'Academic Resources', 'Leadership Training'].map((item) => (
+              {[
+                'Student Advocacy', 
+                'Event Organization', 
+                'Club Support', 
+                'Academic Resources', 
+                'Leadership Training'
+              ].map((item) => (
                 <li key={item}>
                   <a 
                     href="#"
                     className="inline-flex items-center text-gray-400 hover:text-white transition-colors"
                   >
                     <ChevronRight size={14} className="mr-2" />
-                    <span>{item}</span>
+                    <span>{t(item)}</span>
                   </a>
                 </li>
               ))}
@@ -84,22 +97,22 @@ export default function Footer() {
           {/* Newsletter */}
           <div>
             <h3 className="text-lg font-bold text-white mb-4">
-              Newsletter
+              {t('Newsletter')}
             </h3>
             <p className="mb-4">
-              Subscribe to our newsletter to receive updates on events, news, and opportunities.
+              {t('Subscribe to our newsletter to receive updates on events, news, and opportunities.')}
             </p>
             <form className="flex">
               <input
                 type="email"
-                placeholder="Your email address"
+                placeholder={t('Your email address')}
                 className="px-4 py-2 bg-gray-800 text-white rounded-l-md focus:outline-none focus:ring-1 focus:ring-kema-red flex-grow"
               />
               <button 
                 type="submit"
                 className="bg-kema-red text-white px-4 py-2 rounded-r-md hover:bg-kema-dark-red transition-colors"
               >
-                Subscribe
+                {t('Subscribe')}
               </button>
             </form>
           </div>
@@ -108,12 +121,12 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm mb-4 md:mb-0">
-              &copy; {currentYear} BEM KEMA Telkom University Purwokerto. All rights reserved.
+              &copy; {currentYear} BEM KEMA Telkom University Purwokerto. {t('All rights reserved.')}
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Sitemap</a>
+              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">{t('Privacy Policy')}</a>
+              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">{t('Terms of Service')}</a>
+              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">{t('Sitemap')}</a>
             </div>
           </div>
         </div>
