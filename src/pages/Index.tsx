@@ -10,6 +10,7 @@ import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import { Toaster } from '@/components/ui/toaster';
 import { useEffect } from 'react';
 
 const Index = () => {
@@ -52,6 +53,7 @@ const Index = () => {
           <Contact />
           <Footer />
           <ScrollToTop />
+          <Toaster />
         </div>
       </TranslationProvider>
     </ThemeProvider>

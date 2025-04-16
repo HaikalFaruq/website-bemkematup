@@ -1,10 +1,44 @@
 
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Check } from 'lucide-react';
 import { useTranslation } from './TranslationProvider';
+import { useState } from 'react';
+import { Dialog, DialogContent } from './ui/dialog';
+import { useToast } from '../hooks/use-toast';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const { t } = useTranslation();
+  const [email, setEmail] = useState('');
+  const [showSuccessAnimation, setShowSuccessAnimation] = useState(false);
+  const { toast } = useToast();
+  
+  const validateEmail = (email: string) => {
+    return String(email)
+      .toLowerCase()
+      .match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+  };
+  
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!validateEmail(email)) {
+      toast({
+        title: t('Invalid Email'),
+        description: t('Please enter a valid email address.'),
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    // Show success animation
+    setShowSuccessAnimation(true);
+    
+    // Reset form and close animation after delay
+    setTimeout(() => {
+      setShowSuccessAnimation(false);
+      setEmail('');
+    }, 3000);
+  };
   
   return (
     <footer className="bg-gray-900 text-gray-300 pt-16 pb-8">
@@ -102,11 +136,14 @@ export default function Footer() {
             <p className="mb-4">
               {t('Subscribe to our newsletter to receive updates on events, news, and opportunities.')}
             </p>
-            <form className="flex">
+            <form className="flex" onSubmit={handleSubscribe}>
               <input
                 type="email"
                 placeholder={t('Your email address')}
                 className="px-4 py-2 bg-gray-800 text-white rounded-l-md focus:outline-none focus:ring-1 focus:ring-kema-red flex-grow"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
               <button 
                 type="submit"
@@ -131,6 +168,27 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Success Animation */}
+      <Dialog open={showSuccessAnimation} onOpenChange={setShowSuccessAnimation}>
+        <DialogContent className="sm:max-w-md p-0 border-0 bg-transparent shadow-none">
+          <div className="animate-enter transform transition-all duration-500 ease-out">
+            <div className="bg-gradient-to-br from-kema-red to-kema-light-red p-6 rounded-xl shadow-lg text-white backdrop-blur-sm text-center">
+              <div className="flex justify-center mb-4">
+                <div className="rounded-full bg-white/20 p-3 backdrop-blur-sm">
+                  <Check size={40} className="text-white animate-[pulse_1s_ease-in-out_infinite]" />
+                </div>
+              </div>
+              <h3 className="text-xl font-display font-bold mb-2">
+                {t('Thank you for subscribing!')}
+              </h3>
+              <p className="text-white/90">
+                {t('You are now subscribed to our newsletter. We will keep you updated with the latest news and events.')}
+              </p>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </footer>
   );
 }
