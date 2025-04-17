@@ -58,17 +58,20 @@ export default function Hero() {
 
         <div className="relative">
           <div className="w-full h-full max-w-md mx-auto">
-            <div className="relative w-full h-0 pb-[100%] overflow-hidden rounded-2xl shadow-2xl animate-float">
-              {/* Logo with theme-specific rendering */}
+            <div className="relative w-full h-0 pb-[100%] overflow-hidden rounded-2xl shadow-2xl animate-float bg-gradient-to-br from-white/20 to-white/5 dark:from-gray-800/20 dark:to-gray-900/5 backdrop-blur-sm">
+              {/* Logo with theme-specific rendering and shadow */}
               <div className="absolute inset-0 w-full h-full flex items-center justify-center z-10">
-                <img 
-                  src={theme === 'light' 
-                    ? "/lovable-uploads/cfb7c318-8167-4b23-bf8b-1702a608be70.png" 
-                    : "/lovable-uploads/cfb7c318-8167-4b23-bf8b-1702a608be70.png"
-                  } 
-                  alt="BEM KEMA TUP Logo" 
-                  className="h-32 w-32 drop-shadow-xl"
-                />
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-black/10 to-black/5 dark:from-white/10 dark:to-white/5 rounded-full blur-md group-hover:blur-xl transition-all duration-300"></div>
+                  <img 
+                    src={theme === 'light' 
+                      ? "/lovable-uploads/89ed2828-8d80-467e-8ca4-5e5f4d4c0b79.png" 
+                      : "/lovable-uploads/dc26eada-d669-49a0-9264-21452af15ccd.png"
+                    } 
+                    alt="BEM KEMA TUP Logo" 
+                    className="h-40 w-40 relative z-20 drop-shadow-2xl transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
               </div>
             </div>
             <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-white dark:bg-kema-dark rounded-xl shadow-lg p-4 animate-float" style={{ animationDelay: '1s' }}>
@@ -105,4 +108,3 @@ export default function Hero() {
     </section>
   );
 }
-
