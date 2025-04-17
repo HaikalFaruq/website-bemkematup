@@ -2,6 +2,10 @@
 import { useState } from 'react';
 import { Send } from 'lucide-react';
 import { FormData, useContactForm } from './ContactFormUtils';
+import { Button } from '../ui/button';
+import { Input } from '../ui/input';
+import { Label } from '../ui/label';
+import { Textarea } from '../ui/textarea';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
@@ -11,7 +15,7 @@ export default function ContactForm() {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { validateForm, sendEmail } = useContactForm();
+  const { validateForm, sendToWhatsApp } = useContactForm();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -31,17 +35,16 @@ export default function ContactForm() {
     setIsSubmitting(true);
     
     try {
-      const success = await sendEmail(formData);
+      // Send to WhatsApp
+      sendToWhatsApp(formData);
       
-      if (success) {
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
-      }
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -56,10 +59,10 @@ export default function ContactForm() {
       <form onSubmit={handleSubmit}>
         <div className="space-y-5">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+            <Label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               Your Name
-            </label>
-            <input
+            </Label>
+            <Input
               type="text"
               id="name"
               name="name"
@@ -72,10 +75,10 @@ export default function ContactForm() {
           </div>
           
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+            <Label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               Email Address
-            </label>
-            <input
+            </Label>
+            <Input
               type="email"
               id="email"
               name="email"
@@ -88,10 +91,10 @@ export default function ContactForm() {
           </div>
           
           <div>
-            <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+            <Label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               Subject
-            </label>
-            <input
+            </Label>
+            <Input
               type="text"
               id="subject"
               name="subject"
@@ -104,10 +107,10 @@ export default function ContactForm() {
           </div>
           
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+            <Label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               Your Message
-            </label>
-            <textarea
+            </Label>
+            <Textarea
               id="message"
               name="message"
               value={formData.message}
@@ -119,10 +122,10 @@ export default function ContactForm() {
             />
           </div>
           
-          <button
+          <Button
             type="submit"
             disabled={isSubmitting}
-            className={`btn-primary w-full flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+            className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-md flex items-center justify-center gap-2"
           >
             {isSubmitting ? (
               <>
@@ -138,7 +141,7 @@ export default function ContactForm() {
                 Send Message
               </>
             )}
-          </button>
+          </Button>
         </div>
       </form>
     </div>
