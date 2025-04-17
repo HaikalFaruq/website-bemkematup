@@ -29,7 +29,7 @@ export default function PresidentRemarks() {
               <div className="mt-6 flex items-center">
                 <span className="text-kema-red font-semibold">Muhammad Haikal Faruq</span>
                 <span className="mx-2 text-gray-400">|</span>
-                <span className="text-gray-600 dark:text-gray-400">Student Body President</span>
+                <span className="text-gray-600 dark:text-gray-400">{t('Student Body President')}</span>
               </div>
             </div>
 
@@ -54,6 +54,16 @@ export default function PresidentRemarks() {
                   <p>2. {t('Membangun komunikasi yang transparan, akuntabel, dan responsif antara mahasiswa dan pihak kampus, guna menghasilkan kebijakan-kebijakan yang mendukung kepentingan mahasiswa.')}</p>
                   <p>3. {t('Memfasilitasi dan meningkatkan kolaborasi antar organisasi, unit kegiatan mahasiswa (UKM), serta komunitas mahasiswa untuk menciptakan sinergi yang kuat dan memberikan dampak positif di berbagai bidang.')}</p>
                   <p>4. {t('Meningkatkan partisipasi aktif mahasiswa dalam kegiatan sosial dan lingkungan sebagai wujud kontribusi nyata bagi pemberdayaan dan kesejahteraan masyarakat.')}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md animate-float">
+              <div className="flex items-center gap-4">
+                <div className="w-1 h-16 bg-kema-red rounded-full"></div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-800 dark:text-white">{t('Presidential Term')}</h4>
+                  <p className="text-gray-600 dark:text-gray-400">2024 - 2025</p>
                 </div>
               </div>
             </div>

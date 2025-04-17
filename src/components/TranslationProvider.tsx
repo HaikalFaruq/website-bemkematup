@@ -1,4 +1,3 @@
-
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 
 // Define available languages
@@ -34,6 +33,7 @@ const translations = {
     'Leadership': 'Leadership',
     'Guiding our student body with integrity, innovation, and a commitment to excellence.': 'Guiding our student body with integrity, innovation, and a commitment to excellence.',
     'Presidential Term': 'Presidential Term',
+    'Student Body President': 'Student Body President',
     
     // Ministry Section
     'Our': 'Our',
@@ -134,6 +134,7 @@ const translations = {
     'Leadership': 'Kepemimpinan',
     'Guiding our student body with integrity, innovation, and a commitment to excellence.': 'Membimbing mahasiswa kami dengan integritas, inovasi, dan komitmen terhadap keunggulan.',
     'Presidential Term': 'Masa Jabatan',
+    'Student Body President': 'Presiden BEM',
     
     // Ministry Section
     'Our': 'Kementerian',
