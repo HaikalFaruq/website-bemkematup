@@ -1,5 +1,5 @@
 
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, MessageSquare } from 'lucide-react';
 
 export default function ContactInfo() {
   return (
@@ -34,7 +34,6 @@ export default function ContactInfo() {
               Email Us
             </h4>
             <p className="text-gray-600 dark:text-gray-300">
-              haikalfaruq2004@gmail.com<br />
               president@bemkematup.org
             </p>
           </div>
@@ -42,11 +41,11 @@ export default function ContactInfo() {
         
         <div className="flex items-start">
           <div className="flex-shrink-0 p-3 bg-kema-red/10 rounded-full mr-4">
-            <Phone className="text-kema-red" size={24} />
+            <MessageSquare className="text-kema-red" size={24} />
           </div>
           <div>
             <h4 className="font-medium text-gray-800 dark:text-white mb-1">
-              Call Us
+              Text Us
             </h4>
             <p className="text-gray-600 dark:text-gray-300">
               +62 821 2345 6789<br />

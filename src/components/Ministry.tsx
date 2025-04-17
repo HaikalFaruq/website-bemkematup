@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Check } from 'lucide-react';
 import { useTranslation } from './TranslationProvider';
@@ -123,6 +122,42 @@ const ministries: Ministry[] = [
       name: "Rina Wijaya",
       position: "Minister of Academic Affairs",
       photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+    }
+  },
+  {
+    id: 7,
+    name: "Advokasi & Kajian Strategis",
+    description: "Menangani advokasi mahasiswa dan melakukan kajian strategis untuk pengembangan kebijakan kampus.",
+    icon: "⚖️",
+    responsibilities: [
+      "Advokasi hak mahasiswa",
+      "Kajian kebijakan kampus",
+      "Analisis isu strategis",
+      "Pengembangan rekomendasi",
+      "Mediasi konflik"
+    ],
+    minister: {
+      name: "Ahmad Rifai",
+      position: "Minister of Strategic Studies & Advocacy",
+      photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+    }
+  },
+  {
+    id: 8,
+    name: "Analisis Data",
+    description: "Fokus pada pengumpulan dan analisis data untuk pengambilan keputusan berbasis bukti.",
+    icon: "📊",
+    responsibilities: [
+      "Pengumpulan data mahasiswa",
+      "Analisis tren kampus",
+      "Visualisasi data",
+      "Pelaporan statistik",
+      "Riset kebijakan"
+    ],
+    minister: {
+      name: "Sarah Amalia",
+      position: "Minister of Data Analysis",
+      photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
     }
   }
 ];

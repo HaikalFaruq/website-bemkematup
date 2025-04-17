@@ -33,24 +33,29 @@ export default function PresidentRemarks() {
               </div>
             </div>
 
-            <div className="flex flex-col space-y-2">
-              <div className="flex items-center">
-                <div className="w-12 h-1 bg-kema-red rounded-full mr-4"></div>
-                <span className="text-gray-700 dark:text-gray-300 font-medium">{t('Vision')}</span>
+            <div className="flex flex-col space-y-6">
+              <div className="flex flex-col space-y-2">
+                <div className="flex items-center">
+                  <div className="w-12 h-1 bg-kema-red rounded-full mr-4"></div>
+                  <span className="text-gray-700 dark:text-gray-300 font-medium">{t('Vision')}</span>
+                </div>
+                <p className="text-gray-600 dark:text-gray-400 pl-16">
+                  {t('Menjadi organisasi strategis yang berperan sebagai katalisator dan pemimpin perubahan dalam membangun ekosistem mahasiswa yang inklusif, berdaya saing, dan memberikan kontribusi nyata bagi kesejahteraan masyarakat.')}
+                </p>
               </div>
-              <p className="text-gray-600 dark:text-gray-400 pl-16">
-                {t('To be the leading student organization that empowers every student to reach their full potential.')}
-              </p>
-            </div>
 
-            <div className="flex flex-col space-y-2">
-              <div className="flex items-center">
-                <div className="w-12 h-1 bg-kema-red rounded-full mr-4"></div>
-                <span className="text-gray-700 dark:text-gray-300 font-medium">{t('Mission')}</span>
+              <div className="flex flex-col space-y-2">
+                <div className="flex items-center">
+                  <div className="w-12 h-1 bg-kema-red rounded-full mr-4"></div>
+                  <span className="text-gray-700 dark:text-gray-300 font-medium">{t('Mission')}</span>
+                </div>
+                <div className="text-gray-600 dark:text-gray-400 pl-16 space-y-2">
+                  <p>1. {t('Memperjuangkan dan memfasilitasi pemenuhan hak-hak mahasiswa serta menciptakan lingkungan kampus yang inklusif, adil, dan kondusif bagi peningkatan kesejahteraan mahasiswa di berbagai aspek.')}</p>
+                  <p>2. {t('Membangun komunikasi yang transparan, akuntabel, dan responsif antara mahasiswa dan pihak kampus, guna menghasilkan kebijakan-kebijakan yang mendukung kepentingan mahasiswa.')}</p>
+                  <p>3. {t('Memfasilitasi dan meningkatkan kolaborasi antar organisasi, unit kegiatan mahasiswa (UKM), serta komunitas mahasiswa untuk menciptakan sinergi yang kuat dan memberikan dampak positif di berbagai bidang.')}</p>
+                  <p>4. {t('Meningkatkan partisipasi aktif mahasiswa dalam kegiatan sosial dan lingkungan sebagai wujud kontribusi nyata bagi pemberdayaan dan kesejahteraan masyarakat.')}</p>
+                </div>
               </div>
-              <p className="text-gray-600 dark:text-gray-400 pl-16">
-                {t('To create programs and initiatives that foster academic excellence, leadership development, and community engagement.')}
-              </p>
             </div>
           </div>
 
@@ -58,27 +63,10 @@ export default function PresidentRemarks() {
             <div className="relative">
               <div className="w-full h-0 pb-[75%] bg-gradient-to-r from-kema-red to-kema-light-red rounded-2xl overflow-hidden shadow-xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                  src="/lovable-uploads/fb79b029-b3fd-454a-8b99-c5ac91e22783.png"
                   alt="Student President" 
-                  className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-white text-center p-8">
-                    <h3 className="text-3xl font-bold mb-4">{t('Leadership')}</h3>
-                    <p className="text-lg max-w-md">
-                      {t('Guiding our student body with integrity, innovation, and a commitment to excellence.')}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-white dark:bg-gray-700 rounded-xl shadow-lg p-4">
-                <div className="h-full flex flex-col justify-between">
-                  <div className="w-8 h-1 bg-kema-red rounded-full"></div>
-                  <div>
-                    <p className="text-lg font-bold text-gray-800 dark:text-white">2025</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{t('Presidential Term')}</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
