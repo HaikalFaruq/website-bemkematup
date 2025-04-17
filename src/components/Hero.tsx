@@ -2,16 +2,18 @@
 import { ArrowDown, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from './TranslationProvider';
+import { useTheme } from './ThemeProvider';
 
 export default function Hero() {
   const { t } = useTranslation();
+  const { theme } = useTheme();
   
-  const scrollToPresidentRemarks = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const scrollToMinistries = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const presidentRemarksSection = document.getElementById('president-remarks');
+    const ministriesSection = document.getElementById('ministry');
     
-    if (presidentRemarksSection) {
-      presidentRemarksSection.scrollIntoView({ 
+    if (ministriesSection) {
+      ministriesSection.scrollIntoView({ 
         behavior: 'smooth'
       });
     }
@@ -38,7 +40,7 @@ export default function Hero() {
             {t('BEM KEMA Telkom University Purwokerto is dedicated to fostering student growth, providing opportunities, and creating a vibrant campus community.')}
           </p>
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-            <a href="#president-remarks" className="btn-primary flex items-center gap-2" onClick={scrollToPresidentRemarks}>
+            <a href="#ministry" className="btn-primary flex items-center gap-2" onClick={scrollToMinistries}>
               <span>{t('Explore Ministry')}</span>
               <ArrowRight size={16} />
             </a>
@@ -57,19 +59,17 @@ export default function Hero() {
         <div className="relative">
           <div className="w-full h-full max-w-md mx-auto">
             <div className="relative w-full h-0 pb-[100%] overflow-hidden rounded-2xl shadow-2xl animate-float">
-              {/* Place the logo as a top layer on the image */}
+              {/* Logo with theme-specific rendering */}
               <div className="absolute inset-0 w-full h-full flex items-center justify-center z-10">
                 <img 
-                  src="/lovable-uploads/342ad5c5-616e-45fc-abf8-8d7bb75baf6f.png" 
+                  src={theme === 'light' 
+                    ? "/lovable-uploads/cfb7c318-8167-4b23-bf8b-1702a608be70.png" 
+                    : "/lovable-uploads/cfb7c318-8167-4b23-bf8b-1702a608be70.png"
+                  } 
                   alt="BEM KEMA TUP Logo" 
                   className="h-32 w-32 drop-shadow-xl"
                 />
               </div>
-              <img 
-                src="https://images.unsplash.com/photo-1529448256798-a658ae431139?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Students collaborating" 
-                className="absolute inset-0 w-full h-full object-cover"
-              />
             </div>
             <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-white dark:bg-kema-dark rounded-xl shadow-lg p-4 animate-float" style={{ animationDelay: '1s' }}>
               <div className="h-full flex flex-col justify-between">
@@ -94,10 +94,10 @@ export default function Hero() {
       </div>
 
       <a 
-        href="#president-remarks"
-        onClick={scrollToPresidentRemarks}
+        href="#ministry"
+        onClick={scrollToMinistries}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-kema-red dark:hover:text-kema-light-red transition-colors group"
-        aria-label="Scroll down to President Remarks section"
+        aria-label="Scroll down to Ministries section"
       >
         <span className="text-sm mb-2 group-hover:translate-y-1 transition-transform">{t('Scroll down')}</span>
         <ArrowDown className="animate-bounce group-hover:animate-pulse" size={20} />
@@ -105,3 +105,4 @@ export default function Hero() {
     </section>
   );
 }
+
