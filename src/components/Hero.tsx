@@ -1,4 +1,3 @@
-
 import { ArrowDown, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from './TranslationProvider';
@@ -16,6 +15,14 @@ export default function Hero() {
       ministriesSection.scrollIntoView({ 
         behavior: 'smooth'
       });
+    }
+  };
+
+  const scrollToPresidentRemarks = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const section = document.getElementById('president-remarks');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -97,10 +104,10 @@ export default function Hero() {
       </div>
 
       <a 
-        href="#ministry"
-        onClick={scrollToMinistries}
+        href="#president-remarks"
+        onClick={scrollToPresidentRemarks}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-kema-red dark:hover:text-kema-light-red transition-colors group"
-        aria-label="Scroll down to Ministries section"
+        aria-label="Scroll down to President Remarks section"
       >
         <span className="text-sm mb-2 group-hover:translate-y-1 transition-transform">{t('Scroll down')}</span>
         <ArrowDown className="animate-bounce group-hover:animate-pulse" size={20} />

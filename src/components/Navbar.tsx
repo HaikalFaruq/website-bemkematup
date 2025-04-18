@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useTheme } from './ThemeProvider';
 import { useTranslation } from './TranslationProvider';
@@ -18,6 +17,7 @@ type NavLink = {
 
 const navLinks: NavLink[] = [
   { name: 'Home', href: '#home' },
+  { name: 'President', href: '#president-remarks' },
   { name: 'Ministry', href: '#ministry' },
   { name: 'Blog', href: '#blog' },
   { name: 'FAQ', href: '#faq' },
@@ -39,6 +39,15 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled || mobileMenuOpen ? 'bg-white/90 dark:bg-kema-dark/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'
@@ -59,6 +68,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="text-gray-700 dark:text-gray-200 hover:text-kema-red dark:hover:text-kema-light-red font-medium transition-colors"
             >
               {t(link.name)}
@@ -142,8 +152,8 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="block py-2 text-base font-medium text-gray-700 dark:text-gray-200 hover:text-kema-red dark:hover:text-kema-light-red"
-                onClick={() => setMobileMenuOpen(false)}
               >
                 {t(link.name)}
               </a>
