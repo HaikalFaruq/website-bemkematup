@@ -1,4 +1,3 @@
-
 import { Quote } from 'lucide-react';
 import { useTranslation } from './TranslationProvider';
 
@@ -61,6 +60,13 @@ export default function PresidentRemarks() {
 
           <div className="lg:col-span-7 order-1 lg:order-2 relative">
             <div className="relative">
+              <div className="absolute bottom-4 right-4 z-10 bg-white dark:bg-gray-700 p-4 rounded-lg shadow-lg animate-float">
+                <p className="text-sm font-medium text-gray-600 dark:text-gray-300">
+                  {t('Presidential Term')}
+                </p>
+                <p className="text-lg font-bold text-kema-red">2025</p>
+              </div>
+              
               <div className="w-full h-0 pb-[75%] bg-gradient-to-r from-kema-red to-kema-light-red rounded-2xl overflow-hidden shadow-xl">
                 <img 
                   src="/lovable-uploads/fb79b029-b3fd-454a-8b99-c5ac91e22783.png"
