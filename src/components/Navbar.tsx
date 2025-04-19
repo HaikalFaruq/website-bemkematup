@@ -17,7 +17,6 @@ type NavLink = {
 
 const navLinks: NavLink[] = [
   { name: 'Home', href: '#home' },
-  { name: 'President', href: '#president-remarks' },
   { name: 'Ministry', href: '#ministry' },
   { name: 'Blog', href: '#blog' },
   { name: 'FAQ', href: '#faq' },

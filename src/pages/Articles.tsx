@@ -148,14 +148,23 @@ const Articles = () => {
                         </p>
                       </div>
                       
-                      <button 
-                        onClick={() => handleReadMore(post.id)}
-                        className="inline-flex items-center text-kema-red hover:text-kema-dark-red dark:text-kema-light-red dark:hover:text-white transition-colors font-medium mt-2"
-                        aria-expanded={expandedPost === post.id}
-                      >
-                        <span>{expandedPost === post.id ? "Show Less" : "Read More"}</span>
-                        <ArrowRight size={16} className={`ml-2 transition-transform ${expandedPost === post.id ? 'rotate-90' : ''}`} />
-                      </button>
+                      <div className="flex items-center justify-between mt-4">
+                        <button 
+                          onClick={() => handleReadMore(post.id)}
+                          className="inline-flex items-center text-kema-red hover:text-kema-dark-red dark:text-kema-light-red dark:hover:text-white transition-colors font-medium"
+                          aria-expanded={expandedPost === post.id}
+                        >
+                          <span>{expandedPost === post.id ? "Show Less" : "Read More"}</span>
+                          <ArrowRight size={16} className={`ml-2 transition-transform ${expandedPost === post.id ? 'rotate-90' : ''}`} />
+                        </button>
+                        
+                        <Link
+                          to={`/articles/${post.id}`}
+                          className="btn-secondary text-sm"
+                        >
+                          View Full Article
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 ))}

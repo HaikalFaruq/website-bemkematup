@@ -1,4 +1,3 @@
-
 import { Calendar, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -122,7 +121,11 @@ export default function Blog() {
         </div>
 
         <div className="text-center mt-12">
-          <Link to="/articles" className="btn-secondary">
+          <Link 
+            to="/articles" 
+            className="btn-secondary"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
             {t('View All Articles')}
           </Link>
         </div>
