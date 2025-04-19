@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useTranslation } from './TranslationProvider';
@@ -11,9 +10,17 @@ type FAQItem = {
 export default function FAQ() {
   const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
-
+  
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const handleContactClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const faqItems: FAQItem[] = [
@@ -95,9 +102,12 @@ export default function FAQ() {
           <p className="text-gray-600 dark:text-gray-300 mb-4">
             {t('Still have questions? Feel free to reach out to us directly.')}
           </p>
-          <a href="#contact" className="btn-primary">
+          <button 
+            onClick={handleContactClick}
+            className="btn-primary"
+          >
             {t('Contact Us')}
-          </a>
+          </button>
         </div>
       </div>
     </section>
