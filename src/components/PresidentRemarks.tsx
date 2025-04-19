@@ -1,4 +1,3 @@
-
 import { Quote, Target, Users, HandshakeIcon, Globe } from 'lucide-react';
 import { useTranslation } from './TranslationProvider';
 
@@ -6,7 +5,7 @@ export default function PresidentRemarks() {
   const { t } = useTranslation();
   
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
+    <section id="president-remarks" className="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Title Section */}
         <div className="text-center backdrop-blur-lg bg-white/10 rounded-2xl p-8 border border-white/20">
