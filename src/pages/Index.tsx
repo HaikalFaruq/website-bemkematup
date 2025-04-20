@@ -21,37 +21,37 @@ const Index = () => {
           <Navbar />
           
           <AnimateOnScroll type="fade-down" delay={200}>
-            <section id="hero" className="pt-32 pb-20">
+            <section id="hero" className="pt-20">
               <Hero />
             </section>
           </AnimateOnScroll>
           
           <AnimateOnScroll type="fade-up" delay={300}>
-            <section id="president-remarks" className="py-32 bg-gradient-to-br from-gray-900 to-gray-800">
+            <section id="president-remarks" className="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
               <PresidentRemarks />
             </section>
           </AnimateOnScroll>
           
           <AnimateOnScroll type="fade-left" delay={400}>
-            <section id="ministry" className="py-32 bg-white dark:bg-gray-900">
+            <section id="ministry" className="py-20 bg-white dark:bg-gray-900">
               <Ministry />
             </section>
           </AnimateOnScroll>
           
           <AnimateOnScroll type="fade-right" delay={500}>
-            <section id="blog" className="py-32 bg-gray-50 dark:bg-gray-800">
+            <section id="blog" className="py-20 bg-gray-50 dark:bg-gray-800">
               <Blog />
             </section>
           </AnimateOnScroll>
           
           <AnimateOnScroll type="zoom-in" delay={600}>
-            <section id="faq" className="py-32 bg-white dark:bg-gray-900">
+            <section id="faq" className="py-20 bg-white dark:bg-gray-900">
               <FAQ />
             </section>
           </AnimateOnScroll>
           
           <AnimateOnScroll type="slide-up" delay={700}>
-            <section id="contact" className="py-32 bg-gray-50 dark:bg-gray-800">
+            <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
               <Contact />
             </section>
           </AnimateOnScroll>

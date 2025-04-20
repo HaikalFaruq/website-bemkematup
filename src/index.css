@@ -77,7 +77,7 @@
   }
 
   section {
-    @apply relative py-24 md:py-32 overflow-hidden;
+    @apply relative py-16 md:py-20 overflow-hidden;
   }
 }
 
