@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -75,10 +76,6 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'FH Anorma', sans-serif;
   }
-
-  section {
-    @apply relative py-16 md:py-20 overflow-hidden;
-  }
 }
 
 @layer components {
@@ -87,53 +84,35 @@
   }
   
   .btn-primary {
-    @apply inline-flex items-center px-6 py-3 bg-kema-red hover:bg-kema-dark-red text-white font-medium rounded-full transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg hover:shadow-kema-red/20;
+    @apply inline-flex items-center px-6 py-3 bg-kema-red hover:bg-kema-dark-red text-white font-medium rounded-full transition-colors shadow-md;
   }
   
   .btn-secondary {
-    @apply inline-flex items-center px-6 py-3 bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-800 dark:text-white border border-gray-300 dark:border-gray-700 font-medium rounded-full transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg;
+    @apply inline-flex items-center px-6 py-3 bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-800 dark:text-white border border-gray-300 dark:border-gray-700 font-medium rounded-full transition-colors shadow-md;
   }
 
-  .card-hover {
-    @apply transition-all duration-300 ease-out hover:scale-[1.02] hover:-translate-y-1 hover:shadow-xl;
+  .font-display {
+    font-family: 'FH Anorma', sans-serif;
   }
   
-  .section-heading {
-    @apply text-4xl md:text-5xl font-display font-bold leading-tight;
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-8 transition-all duration-1000 ease-out;
   }
   
-  .feature-card {
-    @apply p-6 rounded-2xl bg-white dark:bg-gray-800 shadow-sm transition-all duration-300 ease-out hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1;
+  .animate-on-scroll.is-visible {
+    @apply opacity-100 translate-y-0;
   }
   
-  .interactive-card {
-    @apply relative overflow-hidden rounded-2xl transition-all duration-500 ease-out;
-    &:hover {
-      @apply transform scale-[1.02] shadow-2xl;
-      &:before {
-        @apply opacity-100;
-      }
-    }
-    &:before {
-      content: '';
-      @apply absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity duration-300;
-    }
-  }
-
-  .hover-lift {
-    @apply transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl;
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
   }
   
-  .hover-glow {
-    @apply transition-all duration-300 ease-out;
-    &:hover {
-      @apply shadow-lg;
-      box-shadow: 0 0 30px rgba(var(--kema-red), 0.2);
-    }
+  .animate-pulse-slow {
+    animation: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
   
-  .glass-effect {
-    @apply backdrop-blur-lg bg-white/10 border border-white/20;
+  .animate-enter {
+    animation: enter 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 }
 
@@ -166,16 +145,5 @@
   100% {
     opacity: 1;
     transform: scale(1) translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
