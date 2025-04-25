@@ -1,4 +1,4 @@
-# Welcome to prototype of webite BEM KEMA TUP
+# Welcome to prototype of website BEM KEMA TUP
 
 ![Billboard Mockup](https://github.com/user-attachments/assets/f3e4a936-0e9b-4bd6-ba1d-e6c3f7cd38e6)
 ![iPad Mockup](https://github.com/user-attachments/assets/878eaa9a-3f84-4a62-ba74-207f7e3bcf25)
