@@ -41,7 +41,7 @@ export default function PresidentRemarks() {
                 "{t('As the President of BEM KEMA Telkom University Purwokerto, I am dedicated to building a campus environment where every student can thrive academically, professionally, and personally.')}"
               </blockquote>
               <div className="mt-6 flex items-center">
-                <span className="text-kema-red font-semibold">Muhammad Haikal Faruq</span>
+                <span className="text-kema-red font-semibold">Anggitya Yusuf Fikrandi</span>
                 <span className="mx-2 text-gray-400">|</span>
                 <span className="text-gray-300">{t('Student Body President')}</span>
               </div>

@@ -18,7 +18,7 @@ type Ministry = {
 const ministries: Ministry[] = [
   {
     id: 1,
-    name: "Internal Affairs",
+    name: "Kementerian Dalam Negeri",
     description: "Handles organization management and internal coordination.",
     icon: "👥",
     responsibilities: [
@@ -29,14 +29,14 @@ const ministries: Ministry[] = [
       "Resource allocation"
     ],
     minister: {
-      name: "Muhammad Haikal Faruq",
-      position: "Minister of Internal Affairs",
-      photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+      name: "Dedy Tigor Manurung",
+      position: "Menteri Dalam Negeri",
+      photo: "public/assets/img/team/Menteri Dalam Negeri.png"
     }
   },
   {
     id: 2,
-    name: "External Affairs",
+    name: "Kementerian Luar Negeri",
     description: "Manages relationships with external organizations and stakeholders.",
     icon: "🌐",
     responsibilities: [
@@ -47,14 +47,14 @@ const ministries: Ministry[] = [
       "Brand representation"
     ],
     minister: {
-      name: "Siti Fatimah",
-      position: "Minister of External Affairs",
-      photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+      name: "Yumaniar Hawari Azmi",
+      position: "Menteri Luar Negeri",
+      photo: "public/assets/img/team/Menteri Luar Negeri.png"
     }
   },
   {
     id: 3,
-    name: "Media & Communication",
+    name: "KOMINFO",
     description: "Handles all media content, publications, and communications strategy.",
     icon: "📱",
     responsibilities: [
@@ -65,16 +65,16 @@ const ministries: Ministry[] = [
       "Public announcements"
     ],
     minister: {
-      name: "Budi Santoso",
-      position: "Minister of Media & Communication",
-      photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+      name: "Fiqri Aulia Muhammad B",
+      position: "Menteri KOMINFO",
+      photo: "public/assets/img/team/Menteri KOMINFO.png"
     }
   },
   {
     id: 4,
-    name: "Student Welfare",
+    name: "Kementerian Kaderisasi",
     description: "Focuses on student needs, rights, and general welfare.",
-    icon: "🛡️",
+    icon: "🎓",
     responsibilities: [
       "Student advocacy",
       "Scholarship information",
@@ -83,14 +83,14 @@ const ministries: Ministry[] = [
       "Support services"
     ],
     minister: {
-      name: "Dewi Putri",
-      position: "Minister of Student Welfare",
-      photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+      name: "Khairan Dai Sahito",
+      position: "Menteri KADERISASI",
+      photo: "public/assets/img/team/Menteri KADERISASI.png"
     }
   },
   {
     id: 5,
-    name: "Arts & Culture",
+    name: "Kementerian Minat dan Bakat",
     description: "Promotes cultural awareness and artistic expression on campus.",
     icon: "🎭",
     responsibilities: [
@@ -101,16 +101,16 @@ const ministries: Ministry[] = [
       "Talent development"
     ],
     minister: {
-      name: "Agus Wijaya",
-      position: "Minister of Arts & Culture",
-      photo: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+      name: "Vickram Eka Faza",
+      position: "Menteri Minat dan Bakat",
+      photo: "public/assets/img/team/Menteri Minat dan Bakat.png"
     }
   },
   {
     id: 6,
-    name: "Academic Affairs",
+    name: "Kementerian Ekonomi Kreatif",
     description: "Focuses on academic excellence and educational support.",
-    icon: "📚",
+    icon: "💡",
     responsibilities: [
       "Study groups",
       "Academic competitions",
@@ -120,8 +120,8 @@ const ministries: Ministry[] = [
     ],
     minister: {
       name: "Rina Wijaya",
-      position: "Minister of Academic Affairs",
-      photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+      position: "Menteri Ekonomi Kreatif",
+      photo: "public/assets/img/team/Menteri Ekonomi Kreatif.png"
     }
   },
   {
@@ -137,9 +137,9 @@ const ministries: Ministry[] = [
       "Mediasi konflik"
     ],
     minister: {
-      name: "Ahmad Rifai",
-      position: "Minister of Strategic Studies & Advocacy",
-      photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+      name: "Jaiz Cahya Prasetya",
+      position: "Menteri ADKASTRAT",
+      photo: "public/assets/img/team/Menteri ADKASTRAT.png"
     }
   },
   {
@@ -155,9 +155,9 @@ const ministries: Ministry[] = [
       "Riset kebijakan"
     ],
     minister: {
-      name: "Sarah Amalia",
-      position: "Minister of Data Analysis",
-      photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+      name: "Wildan Daffa Hakim P.A",
+      position: "Menteri Analis Data",
+      photo: "public/assets/img/team/Menteri Analisis Data.png"
     }
   }
 ];
