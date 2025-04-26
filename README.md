@@ -1,18 +1,9 @@
-# Welcome to your Lovable project
+# Welcome to prototype of website BEM KEMA TUP
 
-## Project info
+![Billboard Mockup](https://github.com/user-attachments/assets/f3e4a936-0e9b-4bd6-ba1d-e6c3f7cd38e6)
+![iPad Mockup](https://github.com/user-attachments/assets/878eaa9a-3f84-4a62-ba74-207f7e3bcf25)
+![3 Sheet Size Poster Mockup](https://github.com/user-attachments/assets/edc40a86-070d-42a0-9720-8d29bcdd97ae)
 
-**URL**: https://lovable.dev/projects/2701465f-339a-40b2-bf25-ff8c5591465c
-
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/2701465f-339a-40b2-bf25-ff8c5591465c) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
 
 **Use your preferred IDE**
 
@@ -36,20 +27,6 @@ npm i
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
 ## What technologies are used for this project?
 
 This project is built with:
@@ -59,15 +36,3 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/2701465f-339a-40b2-bf25-ff8c5591465c) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
