@@ -31,7 +31,7 @@ const ministries: Ministry[] = [
     minister: {
       name: "Dedy Tigor Manurung",
       position: "Menteri Dalam Negeri",
-      photo: "public/assets/img/team/Menteri Dalam Negeri.png"
+      photo: "/assets/img/team/menteri-dalam-negeri.png"
     }
   },
   {
@@ -49,7 +49,7 @@ const ministries: Ministry[] = [
     minister: {
       name: "Yumaniar Hawari Azmi",
       position: "Menteri Luar Negeri",
-      photo: "public/assets/img/team/Menteri Luar Negeri.png"
+      photo: "/assets/img/team/menteri-luar-negeri.png"
     }
   },
   {
@@ -67,7 +67,7 @@ const ministries: Ministry[] = [
     minister: {
       name: "Fiqri Aulia Muhammad B",
       position: "Menteri KOMINFO",
-      photo: "public/assets/img/team/Menteri KOMINFO.png"
+      photo: "/assets/img/team/menteri-kominfo.png"
     }
   },
   {
@@ -85,7 +85,7 @@ const ministries: Ministry[] = [
     minister: {
       name: "Khairan Dai Sahito",
       position: "Menteri KADERISASI",
-      photo: "public/assets/img/team/Menteri KADERISASI.png"
+      photo: "/assets/img/team/menteri-kaderisasi.png"
     }
   },
   {
@@ -103,7 +103,7 @@ const ministries: Ministry[] = [
     minister: {
       name: "Vickram Eka Faza",
       position: "Menteri Minat dan Bakat",
-      photo: "public/assets/img/team/Menteri Minat dan Bakat.png"
+      photo: "/assets/img/team/menteri-minat-dan-bakat.png"
     }
   },
   {
@@ -121,7 +121,7 @@ const ministries: Ministry[] = [
     minister: {
       name: "Rina Wijaya",
       position: "Menteri Ekonomi Kreatif",
-      photo: "public/assets/img/team/Menteri Ekonomi Kreatif.png"
+      photo: "/assets/img/team/menteri-ekonomi-kreatif.png"
     }
   },
   {
@@ -139,7 +139,7 @@ const ministries: Ministry[] = [
     minister: {
       name: "Jaiz Cahya Prasetya",
       position: "Menteri ADKASTRAT",
-      photo: "public/assets/img/team/Menteri ADKASTRAT.png"
+      photo: "/assets/img/team/menteri-adkastrat.png"
     }
   },
   {
@@ -157,7 +157,7 @@ const ministries: Ministry[] = [
     minister: {
       name: "Wildan Daffa Hakim P.A",
       position: "Menteri Analis Data",
-      photo: "public/assets/img/team/Menteri Analisis Data.png"
+      photo: "/assets/img/team/menteri-analis-data.png"
     }
   }
 ];
