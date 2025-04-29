@@ -166,7 +166,7 @@ const ministries: Ministry[] = [
     minister: {
       name: "Wildan Daffa Hakim P.A",
       position: "Menteri Analis Data",
-      photo: "public/assets/img/team/menteri-analis-data.png"
+      photo: "/assets/img/team/menteri-analis-data.png"
     }
   }
 ];
