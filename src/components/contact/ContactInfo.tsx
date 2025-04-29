@@ -1,4 +1,3 @@
-
 import { Mail, MapPin, MessageSquare } from 'lucide-react';
 
 export default function ContactInfo() {
@@ -34,7 +33,7 @@ export default function ContactInfo() {
               Email Us
             </h4>
             <p className="text-gray-600 dark:text-gray-300">
-              president@bemkematup.org
+              𝘣𝘦𝘮-𝘱𝘸𝘵@𝘵𝘦𝘭𝘬𝘰𝘮𝘶𝘯𝘪𝘷er𝘴𝘪𝘵𝘺.𝘢𝘤.𝘪𝘥
             </p>
           </div>
         </div>
@@ -48,7 +47,7 @@ export default function ContactInfo() {
               Text Us
             </h4>
             <p className="text-gray-600 dark:text-gray-300">
-              +62 821 2345 6789<br />
+              +62 81-5799-2757<br />
               Office Hours: Mon-Fri, 9am-4pm
             </p>
           </div>

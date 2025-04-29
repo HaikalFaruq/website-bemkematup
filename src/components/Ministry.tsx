@@ -6,6 +6,7 @@ type Ministry = {
   id: number;
   name: string;
   description: string;
+  longDescription?: string;
   icon: string;
   responsibilities: string[];
   minister: {
@@ -19,7 +20,8 @@ const ministries: Ministry[] = [
   {
     id: 1,
     name: "Kementerian Dalam Negeri",
-    description: "Handles organization management and internal coordination.",
+    description: "Menangani manajemen organisasi dan koordinasi internal.",
+    longDescription: "Menangani manajemen organisasi dan koordinasi internal. Kementerian Dalam Negeri memainkan peran penting dalam keseluruhan fungsi BEM KEMA Universitas Telkom Purwokerto, memastikan bahwa kami mempertahankan standar keunggulan dan layanan kami kepada mahasiswa.",
     icon: "👥",
     responsibilities: [
       "Organization structure management",
@@ -37,7 +39,8 @@ const ministries: Ministry[] = [
   {
     id: 2,
     name: "Kementerian Luar Negeri",
-    description: "Manages relationships with external organizations and stakeholders.",
+    description: "Mengelola hubungan dengan organisasi dan pemangku kepentingan eksternal.",
+    longDescription: "Kementerian Luar Negeri memainkan peran vital dalam membangun dan menjaga hubungan dengan organisasi internasional serta pemangku kepentingan eksternal. Melalui diplomasi aktif, Kementerian memperkuat kerja sama politik, ekonomi, dan budaya, sekaligus mempromosikan kepentingan Indonesia di forum global. Langkah ini mendorong stabilitas regional dan memperluas jejaring strategis Indonesia di dunia.",
     icon: "🌐",
     responsibilities: [
       "External partnerships",
@@ -55,7 +58,8 @@ const ministries: Ministry[] = [
   {
     id: 3,
     name: "KOMINFO",
-    description: "Handles all media content, publications, and communications strategy.",
+    description: "Menangani semua konten media, publikasi, dan strategi komunikasi.",
+    longDescription: "Kementerian Komunikasi dan Informasi (KOMINFO) bertanggung jawab menangani semua konten media, publikasi, dan strategi komunikasi untuk memastikan penyebaran informasi yang akurat, transparan, dan edukatif. Melalui pengelolaan media digital, siaran televisi, dan radio, Kominfo memperkuat literasi masyarakat sekaligus menangkal disinformasi. Strategi komunikasi yang efektif juga digunakan untuk mendukung kebijakan pemerintah dan mempromosikan program-program nasional kepada publik.",
     icon: "📱",
     responsibilities: [
       "Social media management",
@@ -73,7 +77,8 @@ const ministries: Ministry[] = [
   {
     id: 4,
     name: "Kementerian Kaderisasi",
-    description: "Focuses on student needs, rights, and general welfare.",
+    description: "Berfokus pada kebutuhan, hak, dan kesejahteraan mahasiswa.",
+    longDescription: "Kementerian Kaderisasi berfokus pada pemenuhan kebutuhan, perlindungan hak, dan peningkatan kesejahteraan mahasiswa sebagai calon pemimpin masa depan. Melalui program pengembangan kapasitas, advokasi, dan dukungan fasilitas, kementerian ini memastikan mahasiswa memiliki lingkungan belajar yang inklusif dan berdaya saing. Upaya ini tidak hanya membangun karakter kepemimpinan, tetapi juga mempersiapkan mahasiswa untuk berkontribusi aktif dalam pembangunan bangsa.",
     icon: "🎓",
     responsibilities: [
       "Student advocacy",
@@ -91,7 +96,8 @@ const ministries: Ministry[] = [
   {
     id: 5,
     name: "Kementerian Minat dan Bakat",
-    description: "Promotes cultural awareness and artistic expression on campus.",
+    description: "Mempromosikan kesadaran budaya dan ekspresi artistik di kampus.",
+    longDescription: "Kementerian Minat dan Bakat (MINBAT) berperan aktif mempromosikan kesadaran budaya serta mendorong ekspresi artistik di lingkungan kampus. Melalui berbagai kegiatan seperti festival seni, workshop, dan kompetisi kreatif, kementerian ini memberikan wadah bagi mahasiswa untuk mengembangkan talenta sekaligus melestarikan kekayaan budaya Indonesia. Inisiatif ini tidak hanya memperkaya kehidupan kampus, tetapi juga membentuk generasi muda yang apresiatif terhadap seni dan berkarakter kuat.",
     icon: "🎭",
     responsibilities: [
       "Cultural events",
@@ -109,7 +115,8 @@ const ministries: Ministry[] = [
   {
     id: 6,
     name: "Kementerian Ekonomi Kreatif",
-    description: "Focuses on academic excellence and educational support.",
+    description: "Berfokus pada keunggulan akademik dan dukungan pendidikan.",
+    longDescription: "Kementerian Ekonomi Kreatif (EKRAF) tidak hanya berfokus pada pengembangan industri kreatif, tetapi juga mendorong keunggulan akademik dan dukungan pendidikan sebagai fondasi inovasi. Melalui kolaborasi dengan perguruan tinggi, pelatihan berbasis kompetensi, serta pendampingan riset terapan, kementerian ini memastikan terciptanya talenta kreatif yang unggul dan siap bersaing di pasar global. Dengan memadukan pendidikan berkualitas dengan peluang ekonomi kreatif, mahasiswa dibekali keterampilan relevan untuk menjadi pionir di industri masa depan.",
     icon: "💡",
     responsibilities: [
       "Study groups",
@@ -128,6 +135,7 @@ const ministries: Ministry[] = [
     id: 7,
     name: "Advokasi & Kajian Strategis",
     description: "Menangani advokasi mahasiswa dan melakukan kajian strategis untuk pengembangan kebijakan kampus.",
+    longDescription: "Kementerian Advokasi & Kajian Strategis (ADKASTRAT) berperan sebagai penghubung antara mahasiswa dan pihak kampus dengan menangani isu-isu advokasi serta melakukan kajian mendalam untuk pengembangan kebijakan yang pro-mahasiswa. Melalui riset berbasis data, diskusi terbuka, dan negosiasi strategis, kementerian ini memastikan aspirasi mahasiswa terdengar dan diakomodasi dalam perumusan kebijakan kampus. Selain itu, kajian-kajian yang dihasilkan menjadi landasan bagi terciptanya lingkungan kampus yang lebih inklusif, transparan, dan berorientasi pada kemajuan bersama.",
     icon: "⚖️",
     responsibilities: [
       "Advokasi hak mahasiswa",
@@ -146,6 +154,7 @@ const ministries: Ministry[] = [
     id: 8,
     name: "Analisis Data",
     description: "Fokus pada pengumpulan dan analisis data untuk pengambilan keputusan berbasis bukti.",
+    longDescription: "Kementerian Analisis Data berperan sebagai pusat pengolahan informasi kampus dengan fokus pada pengumpulan, pengelolaan, dan analisis data untuk mendukung pengambilan keputusan berbasis bukti (evidence-based decision making). Melalui metode riset kuantitatif dan kualitatif, kementerian ini menyediakan rekomendasi strategis bagi seluruh elemen kemahasiswaan berdasarkan temuan data yang akurat dan terpercaya. Hasil analisis digunakan untuk memetakan kebutuhan mahasiswa, mengevaluasi program kerja, serta mengoptimalkan alokasi sumber daya kampus, sehingga seluruh kebijakan dan inisiatif kemahasiswaan dapat tepat sasaran dan berdampak maksimal.",
     icon: "📊",
     responsibilities: [
       "Pengumpulan data mahasiswa",
@@ -157,7 +166,7 @@ const ministries: Ministry[] = [
     minister: {
       name: "Wildan Daffa Hakim P.A",
       position: "Menteri Analis Data",
-      photo: "/assets/img/team/menteri-analis-data.png"
+      photo: "public/assets/img/team/menteri-analis-data.png"
     }
   }
 ];
@@ -221,10 +230,8 @@ export default function Ministry() {
                   </h3>
                 </div>
                 
-                <p className="text-gray-600 dark:text-gray-300 mb-8">
-                  {activeMinistry.description} Our {activeMinistry.name} ministry plays a vital role in 
-                  the overall functioning of BEM KEMA Telkom University Purwokerto, ensuring that we 
-                  maintain our standards of excellence and service to the student body.
+                <p className="text-gray-600 dark:text-gray-300 mb-8 text-justify">
+                  {(activeMinistry.longDescription || activeMinistry.description)}
                 </p>
                 
                 {/* Minister Information */}
