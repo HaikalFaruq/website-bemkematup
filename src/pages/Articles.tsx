@@ -9,10 +9,13 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { allBlogPosts } from '@/data/blogPosts';
+import { useTheme } from '@/components/ThemeProvider';
+import { Toaster } from '@/components/ui/toaster';
 
 const Articles = () => {
   const { toast } = useToast();
   const [expandedPost, setExpandedPost] = useState<number | null>(null);
+  const { theme } = useTheme();
 
   const handleReadMore = (postId: number) => {
     if (expandedPost === postId) {
@@ -33,7 +36,9 @@ const Articles = () => {
         <div className="min-h-screen">
           <Navbar />
           
-          <section className="pt-32 pb-20 bg-gradient-to-br from-gray-900 to-gray-800">
+          <section className={`pt-32 pb-20 ${theme === 'light' 
+            ? 'bg-gradient-to-br from-white to-gray-50' 
+            : 'bg-gradient-to-br from-kema-dark to-gray-900'}`}>
             <div className="section-container">
               <div className="mb-12">
                 <Link to="/" className="inline-flex items-center text-kema-red hover:text-kema-dark-red transition-colors mb-6">
@@ -41,10 +46,10 @@ const Articles = () => {
                   Back to Home
                 </Link>
                 
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 text-white">
+                <h1 className={`text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 ${theme === 'light' ? 'text-gray-800' : 'text-white'}`}>
                   Our Latest <span className="text-kema-red">Articles</span>
                 </h1>
-                <p className="text-gray-300 max-w-3xl">
+                <p className={`max-w-3xl ${theme === 'light' ? 'text-gray-600' : 'text-gray-300'}`}>
                   Stay updated with the latest news, events, and initiatives from BEM KEMA Telkom University Purwokerto.
                   Explore our articles to learn more about what's happening on campus.
                 </p>
@@ -54,7 +59,11 @@ const Articles = () => {
                 {allBlogPosts.map((post) => (
                   <div 
                     key={post.id} 
-                    className="glass-morphism backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)] transition-all duration-300 hover:transform hover:scale-[1.02]"
+                    className={`rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:transform hover:scale-[1.02] ${
+                      theme === 'light'
+                        ? 'bg-white border border-gray-100'
+                        : 'glass-morphism backdrop-blur-xl bg-white/5 border border-white/10'
+                    }`}
                   >
                     <div className="h-48 overflow-hidden">
                       <img 
@@ -73,12 +82,12 @@ const Articles = () => {
                           <span>{post.date}</span>
                         </div>
                       </div>
-                      <h3 className="text-xl font-bold mb-3 text-white">
+                      <h3 className={`text-xl font-bold mb-3 ${theme === 'light' ? 'text-gray-800' : 'text-white'}`}>
                         {post.title}
                       </h3>
                       
                       <div className={`transition-all duration-300 overflow-hidden ${expandedPost === post.id ? 'max-h-[1000px]' : 'max-h-20'}`}>
-                        <p className="text-gray-300 mb-4">
+                        <p className={`mb-4 ${theme === 'light' ? 'text-gray-600' : 'text-gray-300'}`}>
                           {expandedPost === post.id ? post.content : post.excerpt}
                         </p>
                       </div>
@@ -95,7 +104,11 @@ const Articles = () => {
                         
                         <Link
                           to={`/articles/${post.id}`}
-                          className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 text-white font-medium rounded-full transition-colors"
+                          className={`inline-flex items-center px-4 py-2 font-medium rounded-full transition-colors ${
+                            theme === 'light'
+                              ? 'bg-gray-100 hover:bg-gray-200 text-gray-800'
+                              : 'bg-white/10 hover:bg-white/20 text-white'
+                          }`}
                         >
                           View Full Article
                         </Link>
@@ -109,6 +122,7 @@ const Articles = () => {
           
           <Footer />
           <ScrollToTop />
+          <Toaster />
         </div>
       </TranslationProvider>
     </ThemeProvider>
