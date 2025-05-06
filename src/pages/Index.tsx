@@ -12,8 +12,11 @@ import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import { Toaster } from '@/components/ui/toaster';
 import { useEffect } from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Index = () => {
+  const isMobile = useIsMobile();
+  
   // Initialize animation observers
   useEffect(() => {
     const animateOnScrollObserver = new IntersectionObserver(
@@ -24,7 +27,10 @@ const Index = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { 
+        threshold: isMobile ? 0.05 : 0.1,
+        rootMargin: isMobile ? "0px 0px -10% 0px" : "0px"
+      }
     );
 
     // Get all elements that should be animated
@@ -38,7 +44,7 @@ const Index = () => {
         animateOnScrollObserver.unobserve(el);
       });
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <ThemeProvider>
