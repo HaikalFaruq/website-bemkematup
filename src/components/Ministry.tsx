@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Check } from 'lucide-react';
 import { useTranslation } from './TranslationProvider';
@@ -234,20 +235,20 @@ export default function Ministry() {
                   {(activeMinistry.longDescription || activeMinistry.description)}
                 </p>
                 
-                {/* Minister Information */}
-                <div className="mb-8 flex flex-col items-center sm:items-start sm:flex-row sm:space-x-6 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                  <div className="w-24 h-24 rounded-full overflow-hidden mb-4 sm:mb-0">
+                {/* Minister Information - Updated to rectangular photo */}
+                <div className="mb-8 flex flex-col sm:flex-row gap-6 p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                  <div className="w-full sm:w-36 h-48 rounded-lg overflow-hidden border-2 border-gray-200 dark:border-gray-600 shadow-md mx-auto sm:mx-0">
                     <img 
                       src={activeMinistry.minister.photo} 
                       alt={activeMinistry.minister.name}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="text-center sm:text-left">
+                  <div className="text-center sm:text-left flex flex-col justify-center">
                     <h4 className="text-xl font-bold text-gray-800 dark:text-white">
                       {activeMinistry.minister.name}
                     </h4>
-                    <p className="text-kema-red dark:text-kema-light-red font-medium mb-2">
+                    <p className="text-kema-red dark:text-kema-light-red font-medium mt-1 mb-3">
                       {activeMinistry.minister.position}
                     </p>
                     <p className="text-gray-600 dark:text-gray-300">
