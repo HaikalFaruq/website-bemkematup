@@ -1,7 +1,7 @@
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Check } from 'lucide-react';
 import { useTranslation } from './TranslationProvider';
+import { Skeleton } from './ui/skeleton';
 
 type Ministry = {
   id: number;
@@ -15,6 +15,58 @@ type Ministry = {
     position: string;
     photo: string;
   };
+};
+
+interface ImageLoaderProps {
+  src: string;
+  alt: string;
+  className?: string;
+}
+
+const ImageLoader = ({ src, alt, className = "" }: ImageLoaderProps) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [imgSrc, setImgSrc] = useState<string | null>(null);
+  
+  useEffect(() => {
+    setIsLoaded(false);
+    
+    // Create new image object to preload
+    const img = new Image();
+    img.src = src;
+    
+    img.onload = () => {
+      setImgSrc(src);
+      setIsLoaded(true);
+    };
+    
+    img.onerror = () => {
+      console.error(`Failed to load image: ${src}`);
+      // Could set a fallback image here
+      setIsLoaded(true);
+    };
+    
+    return () => {
+      // Clean up
+      img.onload = null;
+      img.onerror = null;
+    };
+  }, [src]);
+
+  return (
+    <>
+      {!isLoaded && (
+        <Skeleton className={`w-full h-full ${className}`} />
+      )}
+      {imgSrc && (
+        <img 
+          src={imgSrc} 
+          alt={alt}
+          className={`w-full h-full object-cover transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'} ${className}`}
+          style={{ display: isLoaded ? 'block' : 'none' }}
+        />
+      )}
+    </>
+  );
 };
 
 const ministries: Ministry[] = [
@@ -235,13 +287,12 @@ export default function Ministry() {
                   {(activeMinistry.longDescription || activeMinistry.description)}
                 </p>
                 
-                {/* Minister Information - Updated to rectangular photo */}
+                {/* Minister Information - With optimized image loading */}
                 <div className="mb-8 flex flex-col sm:flex-row gap-6 p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
                   <div className="w-full sm:w-36 h-48 rounded-lg overflow-hidden border-2 border-gray-200 dark:border-gray-600 shadow-md mx-auto sm:mx-0">
-                    <img 
+                    <ImageLoader 
                       src={activeMinistry.minister.photo} 
                       alt={activeMinistry.minister.name}
-                      className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="text-center sm:text-left flex flex-col justify-center">
