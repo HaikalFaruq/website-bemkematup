@@ -1,5 +1,4 @@
 
-import { ThemeProvider } from '@/components/ThemeProvider';
 import { TranslationProvider } from '@/components/TranslationProvider';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -47,22 +46,20 @@ const Index = () => {
   }, [isMobile]);
 
   return (
-    <ThemeProvider>
-      <TranslationProvider>
-        <div className="min-h-screen">
-          <Navbar />
-          <Hero />
-          <PresidentRemarks />
-          <Ministry />
-          <Blog />
-          <FAQ />
-          <Contact />
-          <Footer />
-          <ScrollToTop />
-          <Toaster />
-        </div>
-      </TranslationProvider>
-    </ThemeProvider>
+    <TranslationProvider>
+      <div className="min-h-screen">
+        <Navbar />
+        <Hero />
+        <PresidentRemarks />
+        <Ministry />
+        <Blog />
+        <FAQ />
+        <Contact />
+        <Footer />
+        <ScrollToTop />
+        <Toaster />
+      </div>
+    </TranslationProvider>
   );
 };
 
