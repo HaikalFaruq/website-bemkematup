@@ -93,7 +93,7 @@ export default function Hero() {
                 <div className="w-8 md:w-12 h-1 bg-kema-red rounded-full"></div>
                 <div>
                   <p className="text-lg md:text-xl font-bold text-gray-800 dark:text-white">500+</p>
-                  <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">Active students participating in our programs</p>
+                  <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">{t('Active students participating in our programs')}</p>
                 </div>
               </div>
             </div>
@@ -101,8 +101,8 @@ export default function Hero() {
               <div className="h-full flex flex-col justify-between">
                 <div className="w-6 md:w-8 h-1 bg-kema-red rounded-full"></div>
                 <div>
-                  <p className="text-base md:text-lg font-bold text-gray-800 dark:text-white">15+</p>
-                  <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">Ministries working together</p>
+                  <p className="text-base md:text-lg font-bold text-gray-800 dark:text-white">40+</p>
+                  <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">{t('Staff working together')}</p>
                 </div>
               </div>
             </div>
@@ -122,4 +122,3 @@ export default function Hero() {
     </section>
   );
 }
-
