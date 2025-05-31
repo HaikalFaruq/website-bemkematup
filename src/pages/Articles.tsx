@@ -1,10 +1,11 @@
+
 import { TranslationProvider } from '@/components/TranslationProvider';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import { ArrowLeft, ArrowRight, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { allBlogPosts } from '@/data/blogPosts';
 import { useTheme } from '@/components/ThemeProvider';
@@ -15,14 +16,19 @@ const Articles = () => {
   const [expandedPost, setExpandedPost] = useState<number | null>(null);
   const { theme } = useTheme();
 
+  // Scroll to top when component mounts without smooth scrolling
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleReadMore = (postId: number) => {
     if (expandedPost === postId) {
       setExpandedPost(null);
     } else {
       setExpandedPost(postId);
       toast({
-        title: "Article Expanded",
-        description: "You can now read the full article content.",
+        title: "Artikel Diperluas",
+        description: "Anda sekarang dapat membaca konten artikel lengkap.",
         variant: "default",
       });
     }
@@ -40,15 +46,15 @@ const Articles = () => {
             <div className="mb-12">
               <Link to="/" className="inline-flex items-center text-kema-red hover:text-kema-dark-red transition-colors mb-6">
                 <ArrowLeft size={18} className="mr-2" />
-                Back to Home
+                Kembali ke Beranda
               </Link>
               
               <h1 className={`text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 ${theme === 'light' ? 'text-gray-800' : 'text-white'}`}>
-                Our Latest <span className="text-kema-red">Articles</span>
+                Artikel <span className="text-kema-red">Terbaru Kami</span>
               </h1>
               <p className={`max-w-3xl ${theme === 'light' ? 'text-gray-600' : 'text-gray-300'}`}>
-                Stay updated with the latest news, events, and initiatives from BEM KEMA Telkom University Purwokerto.
-                Explore our articles to learn more about what's happening on campus.
+                Tetap terhubung dengan berita, acara, dan inisiatif terbaru dari BEM KEMA Telkom University Purwokerto.
+                Jelajahi artikel kami untuk mempelajari lebih lanjut tentang apa yang terjadi di kampus.
               </p>
             </div>
             
@@ -95,7 +101,7 @@ const Articles = () => {
                         className="inline-flex items-center text-kema-red hover:text-kema-light-red transition-colors font-medium"
                         aria-expanded={expandedPost === post.id}
                       >
-                        <span>{expandedPost === post.id ? "Show Less" : "Read More"}</span>
+                        <span>{expandedPost === post.id ? "Tampilkan Lebih Sedikit" : "Baca Selengkapnya"}</span>
                         <ArrowRight size={16} className={`ml-2 transition-transform ${expandedPost === post.id ? 'rotate-90' : ''}`} />
                       </button>
                       
@@ -107,7 +113,7 @@ const Articles = () => {
                             : 'bg-white/10 hover:bg-white/20 text-white'
                         }`}
                       >
-                        View Full Article
+                        Lihat Artikel Lengkap
                       </Link>
                     </div>
                   </div>
