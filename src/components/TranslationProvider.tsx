@@ -54,6 +54,16 @@ const translations = {
     'min read': 'min read',
     'Stay updated with the latest happenings, events, and initiatives from BEM KEMA Telkom University Purwokerto.': 'Stay updated with the latest happenings, events, and initiatives from BEM KEMA Telkom University Purwokerto.',
     
+    // Articles Page
+    'Latest Articles': 'Latest Articles',
+    'Back to Home': 'Back to Home',
+    'Back to Articles': 'Back to Articles',
+    'Stay connected with the latest news, events, and initiatives from BEM KEMA Telkom University Purwokerto. Explore our articles to learn more about what\'s happening on campus.': 'Stay connected with the latest news, events, and initiatives from BEM KEMA Telkom University Purwokerto. Explore our articles to learn more about what\'s happening on campus.',
+    'View Full Article': 'View Full Article',
+    'Article Expanded': 'Article Expanded',
+    'You can now read the full article content.': 'You can now read the full article content.',
+    'Article not found': 'Article not found',
+    
     // FAQ Section
     'Frequently': 'Frequently',
     'Asked Questions': 'Asked Questions',
@@ -154,6 +164,16 @@ const translations = {
     'Show Less': 'Tampilkan Lebih Sedikit',
     'min read': 'menit baca',
     'Stay updated with the latest happenings, events, and initiatives from BEM KEMA Telkom University Purwokerto.': 'Tetap terhubung dengan kejadian, acara, dan inisiatif terbaru dari BEM KEMA Telkom University Purwokerto.',
+    
+    // Articles Page
+    'Latest Articles': 'Artikel Terbaru',
+    'Back to Home': 'Kembali ke Beranda',
+    'Back to Articles': 'Kembali ke Artikel',
+    'Stay connected with the latest news, events, and initiatives from BEM KEMA Telkom University Purwokerto. Explore our articles to learn more about what\'s happening on campus.': 'Tetap terhubung dengan berita, acara, dan inisiatif terbaru dari BEM KEMA Telkom University Purwokerto. Jelajahi artikel kami untuk mempelajari lebih lanjut tentang apa yang terjadi di kampus.',
+    'View Full Article': 'Lihat Artikel Lengkap',
+    'Article Expanded': 'Artikel Diperluas',
+    'You can now read the full article content.': 'Anda sekarang dapat membaca konten artikel lengkap.',
+    'Article not found': 'Artikel tidak ditemukan',
     
     // FAQ Section
     'Frequently': 'Pertanyaan',
